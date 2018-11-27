@@ -1,0 +1,41 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="FirstSuite">
+    <listeners>
+        <listener class-name="utils.Listeners.TestListener"/>
+    </listeners>
+
+    <parameter name="browser" value=""/>
+    <parameter name="username" value="nhidinh"/>
+    <parameter name="encodedPassword" value="UDRhc3N3MHJkMSE=" />
+
+    <test name="Login Test" enabled="true">
+        <classes>
+            <class name="tests.LoginTests"/>
+        </classes>
+    </test>
+
+    <test name="Add New Post Test" preserve-order="true" enabled="false">
+        <classes>
+            <class name="tests.PostTests"/>
+        </classes>
+    </test>
+
+    <test name="Delete a post Test" enabled="false">
+        <classes>
+            <class name="tests.DeletePostTests"/>
+        </classes>
+    </test>
+
+    <test name="Test with Test Steps" preserve-order="true" enabled="false">
+        <classes>
+            <class name="tests.DeletePostTests">
+                <methods>
+                    <include name="LoginStep"/>
+                    <include name="CreateANewPostStep"/>
+                    <include name="DeleteTheAddedPost"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
