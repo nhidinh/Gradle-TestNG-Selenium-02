@@ -9,7 +9,7 @@ import pages.LoginPage;
  * Date: 26/11/2018
  */
 public class CommonLoginTest {
-    public void LoginSuccessfully(String username, String encodedPassword, WebDriver driver) {
+    public void LoginSuccessfully(String username, String encodedPassword, WebDriver driver) throws InterruptedException {
         HomePage homepage = new HomePage(driver);
         LoginPage loginpage = homepage.goToLoginPage();
         loginpage.login(username, encodedPassword);

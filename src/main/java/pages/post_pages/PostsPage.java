@@ -1,4 +1,4 @@
-package pages;
+package pages.post_pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import pages.base_pages.BasePage;
 
 /**
  * User: Nhi Dinh
@@ -15,10 +16,6 @@ public class PostsPage extends BasePage {
     public PostsPage(WebDriver driver){
         super(driver);
     }
-
-
-    //------------VARIABLE-------------//
-//    private String xpathPost = "//td[@data-colname='Title']//strong/a[text()='" + postTitle + "']";
 
     //-------------ELEMENT-------------//
     @FindBy(xpath = "//div[@class='wrap']//a[text()='Add New']")

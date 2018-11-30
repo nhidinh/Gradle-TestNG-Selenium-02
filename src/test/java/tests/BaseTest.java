@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.*;
 
 /**
@@ -20,7 +21,7 @@ public class BaseTest {
 
     @BeforeClass
     @Parameters("browser")
-    public void setup(String browser) {
+    public void setup(String browser, ITestContext context) {
         if (browser.equals("edge")) {
             EdgeDriverManager.getInstance().setup();
             driver = new EdgeDriver();
@@ -34,14 +35,14 @@ public class BaseTest {
             ChromeDriverManager.getInstance().setup();
             driver = new ChromeDriver();
         }
-
+        context.setAttribute("driver", driver);
         driver.manage().window().maximize();
     }
 
     @AfterClass
     public void closeBrowser() {
-        driver.manage().deleteAllCookies();
-        driver.quit();
+//        driver.manage().deleteAllCookies();
+//        driver.quit();
     }
 
     @BeforeMethod

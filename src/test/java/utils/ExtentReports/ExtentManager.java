@@ -4,9 +4,17 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -22,7 +30,7 @@ public class ExtentManager {
     private static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
     private static String reportFileName = "ExtentReport3-"+timeStamp+".html";
     private static String macPath = System.getProperty("user.dir")+ "/TestReport";
-    private static String windowsPath = System.getProperty("user.dir")+ "\\ExtentReports";
+    private static String windowsPath = System.getProperty("user.dir")+ "\\ExtentReports" + "\\Report-"+timeStamp;
     private static String macReportFileLoc = macPath + "/" + reportFileName;
     private static String winReportFileLoc = windowsPath + "\\" + reportFileName;
 
@@ -43,7 +51,6 @@ public class ExtentManager {
         htmlReporter.config().setDocumentTitle(fileName);
         htmlReporter.config().setEncoding("utf-8");
         htmlReporter.config().setReportName(fileName);
-//        htmlReporter.config().
 
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
@@ -100,5 +107,38 @@ public class ExtentManager {
             }
         }
         return platform;
+    }
+
+    // Get Screenshot
+    public static String getScreenShot(WebDriver driver, String screenshotName) throws IOException {
+        TakesScreenshot screenshot = (TakesScreenshot) driver;
+        File source = screenshot.getScreenshotAs(OutputType.FILE);
+        String destination = windowsPath + "\\FailedTestsScreenshots\\"+screenshotName+timeStamp+".png";
+        File finalDestination = new File(destination);
+        FileUtils.copyFile(source, finalDestination);
+        String base = System.getProperty("user.dir")+ "\\ExtentReports";
+        String relative = new File(base).toURI().relativize(new File(destination).toURI()).getPath();
+        return relative;
+    }
+
+    public static String getBase64Screenshot(WebDriver driver, String screenshotName) throws IOException {
+        String encodedBase64 = null;
+        FileInputStream fileInputStream = null;
+        TakesScreenshot screenshot = (TakesScreenshot) driver;
+        File source = screenshot.getScreenshotAs(OutputType.FILE);
+        String destination = windowsPath + "\\FailedTestsScreenshots\\"+screenshotName+timeStamp+".png";
+        File finalDestination = new File(destination);
+        FileUtils.copyFile(source, finalDestination);
+
+        try {
+            fileInputStream =new FileInputStream(finalDestination);
+            byte[] bytes =new byte[(int)finalDestination.length()];
+            fileInputStream.read(bytes);
+            encodedBase64 = new String(Base64.encodeBase64(bytes));
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+
+        return encodedBase64;
     }
 }

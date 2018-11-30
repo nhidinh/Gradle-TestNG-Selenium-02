@@ -1,9 +1,9 @@
 package commontests;
 
 import org.testng.ITestContext;
-import pages.AddNewPostPage;
+import pages.post_pages.AddNewPostPage;
 import pages.DashboardPage;
-import pages.PostsPage;
+import pages.post_pages.PostsPage;
 
 /**
  * User: Nhi Dinh
@@ -21,7 +21,6 @@ public class CommonPostTests {
     }
 
     public void DeleteTheAddedPost(ITestContext context) {
-        CreateANewPostStep(context);
         DashboardPage dashboardPage = (DashboardPage) context.getAttribute("dashboardPage");
         String title = (String) context.getAttribute("title");
         PostsPage postsPage = dashboardPage.navigateToPostPage();

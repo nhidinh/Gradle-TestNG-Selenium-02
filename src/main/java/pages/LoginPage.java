@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import pages.base_pages.BasePage;
 
 import java.util.Base64;
 
@@ -34,16 +34,16 @@ public class LoginPage extends BasePage {
 
     // ------------PAGE METHODS ---------------------
 
-    public void login(String username, String encodedPassword){
+    public void login(String username, String encodedPassword) throws InterruptedException {
         byte[] decodedPassword = Base64.getDecoder().decode(encodedPassword);
         String password = new String(decodedPassword);
-
+        Thread.sleep(1000);
         setText(txt_username, username);
         setText(txt_password, password);
         click(btnLogin);
     }
 
     public void verifyLoginIsSuccessfully(String username){
-        Assert.assertEquals(getText(lblLoggedUsername),username);
+        assertText(lblLoggedUsername, username);
     }
 }

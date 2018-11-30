@@ -1,9 +1,23 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="FirstSuite">
-    <test name="FirstTest">
-        <packages>
-            <package name="tests"/>
-        </packages>
+    <listeners>
+        <listener class-name="utils.Listeners.TestListener"/>
+    </listeners>
+
+    <parameter name="browser" value="chrome"/>
+    <parameter name="username" value="nhidinh"/>
+    <parameter name="encodedPassword" value="UDRhc3N3MHJkMSE=" />
+    <test name="Test Upload Files" enabled="true">
+        <classes>
+            <class name="tests.MediaTests"/>
+        </classes>
+    </test>
+
+    <test name="Test With Selenium" enabled="false">
+        <classes>
+            <class name="tests.CustomizeSiteTest"/>
+        </classes>
+
     </test>
 </suite>

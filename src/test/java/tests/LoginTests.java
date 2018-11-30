@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class LoginTests extends BaseTest {
     @Test(description = "Perform login successfully")
     @Parameters(value = {"username", "encodedPassword"})
-    public void LoginSuccessfully(String username, String encodedPassword) {
+    public void LoginSuccessfully(String username, String encodedPassword) throws InterruptedException {
         CommonLoginTest loginTest = new CommonLoginTest();
         loginTest.LoginSuccessfully(username, encodedPassword, driver);
     }

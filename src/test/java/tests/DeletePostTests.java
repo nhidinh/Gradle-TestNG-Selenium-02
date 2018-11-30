@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.post_pages.AddNewPostPage;
 import utils.DataSetup.DataSetUp;
 
 /**
@@ -15,7 +16,7 @@ import utils.DataSetup.DataSetUp;
 public class DeletePostTests extends BaseTest {
     @BeforeClass
     @Parameters({"username", "encodedPassword"})
-    public void LoginStep(String username, String encodedPassword){
+    public void LoginStep(String username, String encodedPassword) throws InterruptedException {
         HomePage homepage = new HomePage(driver);
         LoginPage loginpage = homepage.goToLoginPage();
         loginpage.login(username, encodedPassword);
@@ -32,6 +33,7 @@ public class DeletePostTests extends BaseTest {
         CommonPostTests commonPostTests = new CommonPostTests();
         commonPostTests.CreateANewPostStep(context);
         commonPostTests.DeleteTheAddedPost(context);
+        AddNewPostPage addNewPostPage = new AddNewPostPage(driver);
     }
 
 
