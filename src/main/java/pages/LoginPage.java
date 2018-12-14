@@ -22,27 +22,39 @@ public class LoginPage extends BasePage {
     //----------WEB ELEMENT -------------
     @FindBy(id = "user_login")
     @CacheLookup
-    WebElement txt_username;
+    private WebElement txt_username;
     @FindBy(id = "user_pass")
     @CacheLookup
+    private
     WebElement txt_password;
     @FindBy(id = "wp-submit")
     @CacheLookup
+    private
     WebElement btnLogin;
     @FindBy(xpath = "//li[@id='wp-admin-bar-my-account']/a[@class='ab-item']/span[@class='display-name']")
+    private
     WebElement lblLoggedUsername;
 
     // ------------PAGE METHODS ---------------------
 
-    public void login(String username, String encodedPassword) throws InterruptedException {
+    public void loginWithUsername(String username, String encodedPassword) {
         byte[] decodedPassword = Base64.getDecoder().decode(encodedPassword);
         String password = new String(decodedPassword);
-        Thread.sleep(1000);
+        waitForPageLoad();
         setText(txt_username, username);
         setText(txt_password, password);
         click(btnLogin);
     }
 
+    public void loginToPage(String username, String encodedPassword, String url) {
+        byte[] decodedPassword = Base64.getDecoder().decode(encodedPassword);
+        String password = new String(decodedPassword);
+        waitForPageLoad();
+        setText(txt_username, username);
+        setText(txt_password, password);
+        click(btnLogin);
+        navigateToPage(url);
+    }
     public void verifyLoginIsSuccessfully(String username){
         assertText(lblLoggedUsername, username);
     }

@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="FirstSuite">
+<suite name="FirstSuite" verbose="1" parallel="false">
     <listeners>
-        <listener class-name="utils.Listeners.TestListener"/>
+        <listener class-name="utilities.TestListener"/>
     </listeners>
 
     <parameter name="browser" value="chrome"/>
@@ -14,7 +14,7 @@
         </classes>
     </test>
 
-    <test name="Test With Selenium" enabled="false">
+    <test name="Test With Sikuli" enabled="true">
         <classes>
             <class name="tests.CustomizeSiteTest"/>
         </classes>

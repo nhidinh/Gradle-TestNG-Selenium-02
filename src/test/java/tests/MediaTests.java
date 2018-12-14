@@ -21,18 +21,18 @@ public class MediaTests extends BaseTest {
         commonLoginTest.LoginSuccessfully(username, encodedPassword, driver);
     }
 
-    @Test(enabled = false)
+    @Test(description = "Upload Image by Browse Button")
     public void uploadImageByBrowseButton() throws AWTException, InterruptedException {
         DashboardPage dashboardPage = new DashboardPage(driver);
         MediaLibraryPage mediaLibraryPage = dashboardPage.navigateToMediaPage();
 
         mediaLibraryPage.clickAddNewButton();
         String imagePath = System.getProperty("user.dir") + "\\media\\dog.jpg";
-        System.out.println(imagePath);
+        Log.info(imagePath);
         mediaLibraryPage.uploadFileByBrowseButton(imagePath);
     }
-    @Test (enabled = false)
-    public void uploadImage() throws AWTException, InterruptedException {
+    @Test (description = "Upload Image")
+    public void uploadImage(){
         DashboardPage dashboardPage = new DashboardPage(driver);
         MediaLibraryPage mediaLibraryPage = dashboardPage.navigateToMediaPage();
 
@@ -40,13 +40,13 @@ public class MediaTests extends BaseTest {
         String imagePath = System.getProperty("user.dir") + "\\media\\dog.jpg";
         mediaLibraryPage.uploadFile(imagePath);
     }
-    @Test(enabled = true)
-    public void uploadImageByDragDrop() throws AWTException, InterruptedException {
+    @Test(description = "Upload Image By Drag Drop")
+    public void uploadImageByDragDrop() {
         DashboardPage dashboardPage = new DashboardPage(driver);
         MediaLibraryPage mediaLibraryPage = dashboardPage.navigateToMediaPage();
 
         mediaLibraryPage.clickAddNewButton();
-        String imagePath = System.getProperty("user.dir") + "\\media\\dog.jpg";
+        String imagePath = System.getProperty("user.dir") + "\\media\\cat.jpg";
         mediaLibraryPage.uploadFileByDragDrop(imagePath);
     }
 }

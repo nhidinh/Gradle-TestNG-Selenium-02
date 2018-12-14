@@ -1,16 +1,13 @@
 package tests;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-import io.github.bonigarcia.wdm.EdgeDriverManager;
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
-import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
+import org.testng.xml.XmlTest;
+import utilities.driver.DriverManager;
+import utilities.driver.DriverManagerFactory;
+import utilities.driver.DriverType;
+import utilities.logger.Log;
 
 /**
  * User: Nhi Dinh
@@ -18,42 +15,45 @@ import org.testng.annotations.*;
  */
 public class BaseTest {
     public WebDriver driver;
+    public DriverManager driverManager;
 
-    @BeforeClass
+    @BeforeSuite
+    public void beforeSuite(XmlTest test){
+        String suite = test.getSuite().getName();
+        Log.innitLog();
+        Log.info("START SUITE: "+ suite);
+    }
+    @BeforeTest
     @Parameters("browser")
-    public void setup(String browser, ITestContext context) {
-        if (browser.equals("edge")) {
-            EdgeDriverManager.getInstance().setup();
-            driver = new EdgeDriver();
-        }else if(browser.equals("firefox")){
-            FirefoxDriverManager.getInstance().setup();
-            driver = new FirefoxDriver();
-        }else if(browser.equals("ie")){
-            InternetExplorerDriverManager.getInstance().setup();
-            driver = new InternetExplorerDriver();
-        }else{
-            ChromeDriverManager.getInstance().setup();
-            driver = new ChromeDriver();
-        }
+    public void setup(DriverType browser, ITestContext context) {
+        driverManager = DriverManagerFactory.getManager(browser);
+        driver = driverManager.getDriver();
         context.setAttribute("driver", driver);
         driver.manage().window().maximize();
     }
 
-    @AfterClass
+    @BeforeTest
+    public void setUpLoggerBeforeTest(ITestContext context){
+        String testCaseName = context.getName();
+        Log.startTestCase(testCaseName);
+    }
+
+    @AfterTest
+    public void endLogAfterTest(ITestContext context){
+        String testCaseName = context.getName();
+        Log.endTestCase(testCaseName);
+    }
+
+    @AfterTest
     public void closeBrowser() {
-//        driver.manage().deleteAllCookies();
-//        driver.quit();
+        Log.info("Closing browser after test");
+        driver.manage().deleteAllCookies();
+        driver.quit();
     }
 
-    @BeforeMethod
-    public void BeforeMethod() {
-        System.out.println("Test is starting");
+    @AfterSuite
+    public void afterSuite() {
+        Log.info("ENDING SUITE");
     }
-
-    @AfterMethod
-    public void AfterMethod() {
-        System.out.println("Test is ending");
-    }
-
 
 }

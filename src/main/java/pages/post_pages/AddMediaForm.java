@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.base_pages.BasePage;
-import utilities.CustomKeywords.UploadFiles;
+import utilities.customkeywords.UploadFiles;
 
 import java.awt.*;
 
@@ -50,7 +50,7 @@ public class AddMediaForm extends BasePage {
     }
 
     public void addMediaToPostByJS(String filePath) {
-        uploadFiles.UploadFile(filePath, txt_UploadFile, driver);
+        uploadFiles.uploadFile(filePath, txt_UploadFile, driver);
     }
 
     public void addMediaToPostByBrowseButton(String filePath) throws AWTException {
@@ -61,7 +61,7 @@ public class AddMediaForm extends BasePage {
         click(tabUploadFiles);
     }
 
-    public void clickCreateNewGalery() throws InterruptedException {
+    public void clickCreateNewGallery() throws InterruptedException {
         waitForElementIsClickable(btnCreateNewGallery);
         click(btnCreateNewGallery);
     }

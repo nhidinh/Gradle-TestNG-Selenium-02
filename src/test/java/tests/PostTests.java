@@ -10,7 +10,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.post_pages.AddNewPostPage;
 import pages.post_pages.PostsPage;
-import utils.DataSetup.DataSetUp;
+import utilities.datasetup.DataSetUp;
 
 import java.awt.*;
 
@@ -21,10 +21,10 @@ import java.awt.*;
 public class PostTests extends BaseTest {
     @BeforeClass
     @Parameters({"username", "encodedPassword"})
-    public void LoginStep(String username, String encodedPassword) throws InterruptedException {
+    public void LoginStep(String username, String encodedPassword) {
         HomePage homepage = new HomePage(driver);
         LoginPage loginpage = homepage.goToLoginPage();
-        loginpage.login(username, encodedPassword);
+        loginpage.loginWithUsername(username, encodedPassword);
     }
 
     @BeforeClass
@@ -40,11 +40,11 @@ public class PostTests extends BaseTest {
 
         String title = (String) context.getAttribute("title");
         AddNewPostPage addNewPostPage = new AddNewPostPage(driver);
-        addNewPostPage.verifyNewPostIdAdded(title);
+        addNewPostPage.verifyNewPostIdAdded(title+"333");
     }
 
     @Test(description = "Create A New Post With Media Uploaded")
-    public void CreateNewPostWithMedia(ITestContext context) throws AWTException, InterruptedException {
+    public void CreateNewPostWithMedia(ITestContext context) throws AWTException {
         DashboardPage dashboardPage = (DashboardPage) context.getAttribute("dashboardPage");
         String title = (String) context.getAttribute("title");
         String body = (String) context.getAttribute("body");
@@ -53,9 +53,19 @@ public class PostTests extends BaseTest {
         AddNewPostPage addNewPostPage = postsPage.clickAddNewPost();
 
         String imagePath = System.getProperty("user.dir") + "\\media\\dog.jpg";
-//        addNewPostPage.addMediaToPost(imagePath);
-        addNewPostPage.addGaleryByJS(imagePath);
+        addNewPostPage.addMediaToPost(imagePath);
+    }
 
+    @Test(description = "Create A New Post With New Gallery")
+    public void CreateNewPostWithGalery(ITestContext context) throws InterruptedException {
+        DashboardPage dashboardPage = (DashboardPage) context.getAttribute("dashboardPage");
+        String title = (String) context.getAttribute("title");
+        String body = (String) context.getAttribute("body");
+        String imagePath = System.getProperty("user.dir") + "\\media\\dog.jpg";
+
+        PostsPage postsPage = dashboardPage.navigateToPostPage();
+        AddNewPostPage addNewPostPage = postsPage.clickAddNewPost();
+        addNewPostPage.addGalleryToPost(imagePath);
     }
 
 }

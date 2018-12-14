@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.base_pages.BasePage;
-import utilities.CustomKeywords.UploadFiles;
+import utilities.customkeywords.UploadFiles;
 
 import java.awt.*;
 
@@ -45,7 +45,7 @@ public class MediaLibraryPage extends BasePage {
     }
 
     public void uploadFile(String filePath) {
-        uploadFiles.UploadFile(filePath, txt_UploadFile, driver);
+        uploadFiles.uploadFile(filePath, txt_UploadFile, driver);
     }
 
 }

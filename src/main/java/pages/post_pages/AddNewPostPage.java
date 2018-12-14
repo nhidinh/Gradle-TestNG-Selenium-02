@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import pages.base_pages.BasePage;
-import utilities.CustomKeywords.UploadFiles;
+import utilities.customkeywords.UploadFiles;
 import utilities.Generator;
 
 import java.awt.*;
@@ -64,12 +64,12 @@ public class AddNewPostPage extends BasePage {
         addMediaForm.clickInsertMediaButton();
     }
 
-    public void addGaleryByJS(String filePath) throws InterruptedException {
+    public void addGalleryToPost(String filePath) throws InterruptedException {
         AddMediaForm addMediaForm = clickAddMediaButton();
         addMediaForm.clickCreateGalleryLink();
         addMediaForm.selectUploadFilesTab();
         addMediaForm.addMediaToPostByJS(filePath);
-        addMediaForm.clickCreateNewGalery();
+        addMediaForm.clickCreateNewGallery();
     }
 
     public EditPostPage addNewPost(String title, String body) {
