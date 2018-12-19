@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.annotations.Test;
+import pages.media_pages.MediaLibraryPage;
 import utilities.Links;
 
 /**
@@ -13,9 +14,9 @@ public class MediaTests extends BaseTest {
     public void uploadImageByBrowseButton(){
         String imagePath = Links.IMAGE_PATH;
 
-        Page.LeftNavigation().NavigateToMediaPage();
-        Page.MediaLibrary().clickAddNewButton();
-        Page.MediaLibrary().uploadFileByBrowseButton(imagePath);
+        MediaLibraryPage mediaLibraryPage = Page.LeftNavigation().NavigateToMediaPage();
+        mediaLibraryPage.clickAddNewButton();
+        mediaLibraryPage.uploadFileByBrowseButton(imagePath);
     }
     @Test (description = "Upload Image")
     public void uploadImage(){
