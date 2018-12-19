@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import pages.base_pages.BasePage;
 import utilities.Links;
 
 /**

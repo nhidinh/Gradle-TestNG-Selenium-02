@@ -1,58 +1,84 @@
 package tests;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-import io.github.bonigarcia.wdm.EdgeDriverManager;
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
-import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.*;
+import org.testng.xml.XmlTest;
+import utilities.Browser;
+import utilities.Links;
+import utilities.driver.DriverType;
+import utilities.generator.PageGenerator;
+import utilities.logger.Log;
+import utils.setup_testsuite.LoginAPI;
+
+import java.io.IOException;
+import java.util.concurrent.ExecutionException;
+
 
 /**
  * User: Nhi Dinh
  * Date: 21/11/2018
  */
 public class BaseTest {
-    public WebDriver driver;
+    WebDriver driver;
+    PageGenerator Page;
+
+    @BeforeSuite
+    public void beforeSuite(XmlTest test) {
+        String suite = test.getSuite().getName();
+        Log.innitLog();
+        Log.info("START SUITE: " + suite);
+    }
+
+    @BeforeTest
+    @Parameters("browser")
+    public void Setup(DriverType browser, ITestContext context) {
+        Browser.Setup(browser, context);
+        driver = (WebDriver) context.getAttribute("driver");
+        Browser.Maximize();
+    }
+
+    @BeforeTest
+    public void setPage(){
+        Page = new PageGenerator(driver);
+    }
+
+    @BeforeTest
+    public void SetUpLoggerBeforeTest(ITestContext context) {
+        String testCaseName = context.getName();
+        Log.startTestCase(testCaseName);
+    }
 
     @BeforeClass
-    @Parameters("browser")
-    public void setup(String browser) {
-        if (browser.equals("edge")) {
-            EdgeDriverManager.getInstance().setup();
-            driver = new EdgeDriver();
-        }else if(browser.equals("firefox")){
-            FirefoxDriverManager.getInstance().setup();
-            driver = new FirefoxDriver();
-        }else if(browser.equals("ie")){
-            InternetExplorerDriverManager.getInstance().setup();
-            driver = new InternetExplorerDriver();
-        }else{
-            ChromeDriverManager.getInstance().setup();
-            driver = new ChromeDriver();
+    @Parameters({"username", "encodedPassword"})
+    public void LoginBeforeTest(String username, String encodedPassword, ITestContext testContext){
+        if(!testContext.getName().contains("Login Test")) {
+            String loginURI = Links.API_URI_LOGIN;
+            LoginAPI loginAPI = new LoginAPI();
+            try {
+                loginAPI.loginAPI(driver, loginURI);
+            } catch (ExecutionException | InterruptedException | IOException e) {
+                e.printStackTrace();
+            }
         }
-
-        driver.manage().window().maximize();
+        Page.Dashboard().Goto();
     }
 
-    @AfterClass
-    public void closeBrowser() {
-        driver.manage().deleteAllCookies();
-        driver.quit();
+    @AfterTest
+    public void EndLogAfterTest(ITestContext context) {
+        String testCaseName = context.getName();
+        Log.endTestCase(testCaseName);
     }
 
-    @BeforeMethod
-    public void BeforeMethod() {
-        System.out.println("Test is starting");
+    @AfterTest
+    public void CloseBrowser() {
+        Log.info("Closing browser after test");
+        Browser.Close();
     }
 
-    @AfterMethod
-    public void AfterMethod() {
-        System.out.println("Test is ending");
+    @AfterSuite
+    public void AfterSuite() {
+        Log.info("ENDING SUITE");
     }
-
 
 }

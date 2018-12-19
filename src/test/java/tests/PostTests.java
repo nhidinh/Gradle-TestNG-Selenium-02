@@ -1,13 +1,10 @@
 package tests;
 
-import commontests.CommonPostTests;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.HomePage;
-import pages.LoginPage;
-import utils.DataSetup.DataSetUp;
+import utilities.Links;
+import utilities.datasetup.DataSetUp;
 
 /**
  * User: Nhi Dinh
@@ -15,23 +12,46 @@ import utils.DataSetup.DataSetUp;
  */
 public class PostTests extends BaseTest {
     @BeforeClass
-    @Parameters({"username", "encodedPassword"})
-    public void LoginStep(String username, String encodedPassword){
-        HomePage homepage = new HomePage(driver);
-        LoginPage loginpage = homepage.goToLoginPage();
-        loginpage.login(username, encodedPassword);
-    }
-
-    @BeforeClass
-    public void setUpData(ITestContext context){
+    public void setUpData(ITestContext context) {
         DataSetUp data = new DataSetUp();
         data.setUpPostData(context, driver);
     }
 
     @Test(description = "Create A New Post")
-    public void CreateANewPost(ITestContext context){
-        CommonPostTests postTests = new CommonPostTests();
-        postTests.CreateANewPostStep(context);
+    public void CreateANewPost(ITestContext context) {
+        String title = (String) context.getAttribute("title");
+        String body = (String) context.getAttribute("body");
+
+        Page.LeftNavigation().NavigateToPostPage();
+        Page.Posts().clickAddNewPost();
+        Page.AddNewPost().addNewPost(title, body);
+
+        Page.AddNewPost().verifyNewPostIdAdded(title+"invalid");
+    }
+
+    @Test(description = "Create A New Post With Media Uploaded")
+    public void CreateNewPostWithMedia(ITestContext context) {
+        String title = (String) context.getAttribute("title");
+        String body = (String) context.getAttribute("body");
+        String imagePath = Links.IMAGE_PATH;
+
+        Page.LeftNavigation().NavigateToPostPage();
+        Page.Posts().clickAddNewPost();
+
+        Page.AddNewPost().addMediaToPost(imagePath);
+        Page.AddNewPost().addNewPost(title, body);
+    }
+
+    @Test(description = "Create A New Post With New Gallery")
+    public void CreateNewPostWithGallery(ITestContext context) {
+        String title = (String) context.getAttribute("title");
+        String body = (String) context.getAttribute("body");
+        String imagePath = Links.IMAGE_PATH;
+
+        Page.LeftNavigation().NavigateToPostPage();
+        Page.Posts().clickAddNewPost();
+        Page.AddNewPost().addGalleryToPost(imagePath);
+        Page.AddNewPost().addNewPost(title, body);
     }
 
 }

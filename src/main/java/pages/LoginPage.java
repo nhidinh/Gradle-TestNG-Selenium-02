@@ -4,8 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import pages.base_pages.BasePage;
+import utilities.Links;
 
 import java.util.Base64;
 
@@ -16,34 +16,58 @@ import java.util.Base64;
 public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver){
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     //----------WEB ELEMENT -------------
     @FindBy(id = "user_login")
     @CacheLookup
-    WebElement txt_username;
+    private static WebElement txt_username;
     @FindBy(id = "user_pass")
     @CacheLookup
+    private static
     WebElement txt_password;
     @FindBy(id = "wp-submit")
     @CacheLookup
+    private static
     WebElement btnLogin;
     @FindBy(xpath = "//li[@id='wp-admin-bar-my-account']/a[@class='ab-item']/span[@class='display-name']")
+    private static
     WebElement lblLoggedUsername;
+    @FindBy(id = "login_error")
+    private static WebElement lblLoginError;
 
     // ------------PAGE METHODS ---------------------
 
-    public void login(String username, String encodedPassword){
+    public void LoginWithUsername(String username, String encodedPassword) {
         byte[] decodedPassword = Base64.getDecoder().decode(encodedPassword);
         String password = new String(decodedPassword);
-
+        waitForPageLoad();
         setText(txt_username, username);
         setText(txt_password, password);
         click(btnLogin);
     }
 
-    public void verifyLoginIsSuccessfully(String username){
-        Assert.assertEquals(getText(lblLoggedUsername),username);
+    public void LoginToPage(String username, String encodedPassword, String url) {
+        byte[] decodedPassword = Base64.getDecoder().decode(encodedPassword);
+        String password = new String(decodedPassword);
+        waitForPageLoad();
+        setText(txt_username, username);
+        setText(txt_password, password);
+        click(btnLogin);
+        navigateToPage(url);
     }
+
+    public void VerifyLoginIsSuccessfully(String username){
+        assertText(lblLoggedUsername, username);
+    }
+
+    public void VerifyErrorMessageDisplays(){
+        waitElementVisibility(lblLoginError);
+    }
+
+    public LoginPage Goto(){
+        navigateToPage(Links.URL_LOGIN);
+        return new LoginPage(driver);
+    }
+
 }
