@@ -3,7 +3,6 @@ package pages.post_pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import pages.base_pages.BasePage;
@@ -19,16 +18,16 @@ public class PostsPage extends BasePage {
 
     //-------------ELEMENT-------------//
     @FindBy(xpath = "//div[@class='wrap']//a[text()='Add New']")
-    WebElement btnAddNewBy;
+    private WebElement btnAddNewBy;
     @FindBy(xpath = "//div[@id='message']//p")
-    WebElement msgDeletedPost;
+    private WebElement msgDeletedPost;
 
-    public WebElement getTrashButton(String postTitle){
+    private WebElement getTrashButton(String postTitle){
         String xpathBtnTrash = "//span[contains(@class,'trash')]//a[@class='submitdelete' and contains(@aria-label, '"+postTitle+"')]";
         return driver.findElement(By.xpath(xpathBtnTrash));
     }
 
-    public WebElement getRowPostElement(String postTitle){
+    private WebElement getRowPostElement(String postTitle){
         String xpathPost = "//td[@data-colname='Title']//strong/a[text()='" + postTitle + "']";
         return driver.findElement(By.xpath(xpathPost));
     }
@@ -44,9 +43,8 @@ public class PostsPage extends BasePage {
         click(btnTrash);
     }
     public void findPostByTitle(String postTitle){
-        Actions action = new Actions(driver);
         WebElement tdPost = getRowPostElement(postTitle);
-        ((Actions) action).moveToElement(tdPost).perform();
+        hoverMouseToElement(tdPost);
     }
     public void verifyPostIsMovedToTrash(){
         String message = getText(msgDeletedPost);

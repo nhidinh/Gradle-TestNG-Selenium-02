@@ -3,7 +3,7 @@ package utilities.datasetup;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import pages.DashboardPage;
-import utilities.Generator;
+import utilities.generator.DataGenerator;
 
 /**
  * User: Nhi Dinh
@@ -12,9 +12,10 @@ import utilities.Generator;
 public class DataSetUp{
     public void setUpPostData(ITestContext context, WebDriver driver){
         DashboardPage dashboardPage = new DashboardPage(driver);
-        Generator generator = new Generator();
-        String body = generator.body();
-        String title = generator.title();
+
+        DataGenerator dataGenerator = new DataGenerator();
+        String body = dataGenerator.body();
+        String title = dataGenerator.title();
 
         context.setAttribute("dashboardPage", dashboardPage);
         context.setAttribute("title", title);

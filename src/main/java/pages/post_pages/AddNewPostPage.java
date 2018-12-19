@@ -5,10 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import pages.base_pages.BasePage;
-import utilities.customkeywords.UploadFiles;
-import utilities.Generator;
-
-import java.awt.*;
 
 /**
  * User: Nhi Dinh
@@ -21,55 +17,54 @@ public class AddNewPostPage extends BasePage {
 
     //----------WEB ELEMENT --------------//
     @FindBy(id = "title")
-    WebElement txtTitle;
+    private WebElement txtTitle;
     @FindBy(id = "content_ifr")
-    WebElement frmBody;
+    private WebElement frmBody;
     @FindBy(xpath = "//body[@id='tinymce']")
-    WebElement txtBody;
+    private WebElement txtBody;
     @FindBy(id = "publish")
-    WebElement btnPublish;
+    private WebElement btnPublish;
     @FindBy(xpath = "//div[@id='message']//p")
-    WebElement lblMessage;
+    private WebElement lblMessage;
     @FindBy(xpath = "//div[@id='message']//a[text()='View post']")
-    WebElement lnkViewPost;
+    private WebElement lnkViewPost;
     @FindBy(xpath = "//div[@id='edit-slug-box']//span[@id='sample-permalink']")
-    WebElement lnkPermalink;
+    private WebElement lnkPermalink;
     @FindBy(id = "insert-media-button")
-    WebElement btnAddMedia;
+    private WebElement btnAddMedia;
 
     //--------- VARIABLE ---------------//
-    Generator generator = new Generator();
-    UploadFiles uploadFiles = new UploadFiles();
 
     //----------METHODS------------------//
 
-    public void setPostTitle(String title) {
+    private void setPostTitle(String title) {
         setText(txtTitle, title);
     }
 
-    public void setPostBody(String body) {
+    private void setPostBody(String body) {
         driver.switchTo().frame(frmBody);
         setText(txtBody, body);
         driver.switchTo().defaultContent();
     }
 
-    public AddMediaForm clickAddMediaButton() {
+    private AddMediaForm clickAddMediaButton() {
         click(btnAddMedia);
         return new AddMediaForm(driver);
     }
-    public void addMediaToPost(String filePath) throws AWTException {
+    public void addMediaToPost(String filePath){
         AddMediaForm addMediaForm = clickAddMediaButton();
         addMediaForm.selectUploadFilesTab();
-        addMediaForm.addMediaToPostByBrowseButton(filePath);
+        addMediaForm.addMediaToPostByJS(filePath);
         addMediaForm.clickInsertMediaButton();
     }
 
-    public void addGalleryToPost(String filePath) throws InterruptedException {
+    public void addGalleryToPost(String filePath)  {
         AddMediaForm addMediaForm = clickAddMediaButton();
         addMediaForm.clickCreateGalleryLink();
         addMediaForm.selectUploadFilesTab();
         addMediaForm.addMediaToPostByJS(filePath);
         addMediaForm.clickCreateNewGallery();
+        addMediaForm.clickInserGalleryButton();
     }
 
     public EditPostPage addNewPost(String title, String body) {

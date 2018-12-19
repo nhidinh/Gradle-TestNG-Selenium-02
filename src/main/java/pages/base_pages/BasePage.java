@@ -3,11 +3,13 @@ package pages.base_pages;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
-import utilities.logger.Log;
 import utilities.WebElementHelper;
+import utilities.generator.PageGenerator;
+import utilities.logger.Log;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
@@ -16,26 +18,30 @@ import java.util.NoSuchElementException;
  * User: Nhi Dinh
  * Date: 21/11/2018
  */
-public class BasePage {
-    public WebDriver driver;
-    private WebDriverWait wait;
+public class BasePage extends PageGenerator {
+    private static WebDriverWait wait;
     private Wait waitF;
     private static final int TIMEOUT = 10;
     private static final Duration duration = Duration.ofSeconds(20);
     private static final Duration polling = Duration.ofSeconds(5);
     private static final WebElementHelper elementHelper = new WebElementHelper();
 
-
     //Constructor
     public BasePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         wait = new WebDriverWait(driver, TIMEOUT);
         waitF = new FluentWait<WebDriver>(driver).withTimeout(duration).pollingEvery(polling).ignoring(NoSuchElementException.class);
         PageFactory.initElements(driver, this);
     }
 
+    //Hover Mouse
+    public void hoverMouseToElement(WebElement element){
+        Actions action = new Actions(driver);
+        ((Actions) action).moveToElement(element).perform();
+    }
+
     // Wait Element Visibility
-    public void waitElementVisibility(WebElement ele){
+    public static void waitElementVisibility(WebElement ele){
         String elementLocator = elementHelper.getLocatorOfElement(ele) ;
         Log.info(setStartMessage("waiting for", "",elementLocator, "is visibility" ));
         wait.until(ExpectedConditions.visibilityOf(ele));
@@ -48,7 +54,13 @@ public class BasePage {
         Log.info(setStartMessage("waiting for","", elementLocator, "is clickable"));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         Log.info(setEndMessage("waiting for","",elementLocator ,"is clickable"));
+    }
 
+    //Verify Element is Presented
+    public boolean isElementPresent(WebElement element){
+        String elementLocator = elementHelper.getLocatorOfElement(element) ;
+        Log.info(setStartMessage("checking for","", elementLocator, "is presented"));
+        return element.isDisplayed();
     }
 
     //Wait Element Disappears
@@ -57,11 +69,12 @@ public class BasePage {
     }
 
     // Navigate to page
-    public void navigateToPage(String url){
+    public static void navigateToPage(String url){
         Log.info("Navigating to " + url);
         try{
             driver.get(url);
         }catch (Exception e){
+            System.out.println(e.getMessage());
             Log.error("Failed navigating to " + url);
             Log.error(e.toString());
         }
@@ -69,7 +82,7 @@ public class BasePage {
     }
 
     // Click
-    public void click(WebElement ele) {
+    public static void click(WebElement ele) {
         String elementLocator = elementHelper.getLocatorOfElement(ele) ;
         waitElementVisibility(ele);
         Log.info(setStartMessage("clicking to","", elementLocator,""));
@@ -87,7 +100,7 @@ public class BasePage {
     }
 
     // Set Text
-    public void setText(WebElement ele, String text){
+    public static void setText(WebElement ele, String text){
         String elementLocator = elementHelper.getLocatorOfElement(ele) ;
         waitElementVisibility(ele);
         Log.info(setStartMessage("setting text:", text, elementLocator, ""));
@@ -96,7 +109,7 @@ public class BasePage {
     }
 
     // Get Text
-    public String getText(WebElement ele) {
+    public static String getText(WebElement ele) {
         String elementLocator = elementHelper.getLocatorOfElement(ele) ;
         waitElementVisibility(ele);
         Log.info(setStartMessage("getting text of", "", elementLocator, ""));
@@ -106,7 +119,7 @@ public class BasePage {
     }
 
     //Assert Equals
-    public void assertText(WebElement ele, String expectedText) {
+    public static void assertText(WebElement ele, String expectedText) {
         String elementLocator = elementHelper.getLocatorOfElement(ele) ;
         waitElementVisibility(ele);
         Log.info(setStartMessage("asserting text:", expectedText, elementLocator, ""));
@@ -130,7 +143,7 @@ public class BasePage {
     }
 
     //Wait for page load
-    public void waitForPageLoad(){
+    public static void waitForPageLoad(){
         ExpectedCondition<Boolean> expectation = new
                 ExpectedCondition<Boolean>() {
                     public Boolean apply(WebDriver driver) {
@@ -148,13 +161,13 @@ public class BasePage {
     }
 
 
-    private String setStartMessage(String action, String value, String elementLocator, String tail){
+    private static String setStartMessage(String action, String value, String elementLocator, String tail){
         if (!value.equals("")){
             value = "[" + value+"]";
         }
         return "Start " + action + value + " element with locator " + elementLocator + " " + tail;
     }
-    private String setEndMessage(String action, String value, String elementLocator, String tail){
+    private static String setEndMessage(String action, String value, String elementLocator, String tail){
         if (!value.equals("")){
             value = "[" + value+"]";
         }

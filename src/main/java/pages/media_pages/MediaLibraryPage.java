@@ -17,27 +17,31 @@ public class MediaLibraryPage extends BasePage {
         super(driver);
     }
     //=============VARIABLES====================//
-    UploadFiles uploadFiles = new UploadFiles();
+    private UploadFiles uploadFiles = new UploadFiles();
 
     //=============ELEMENTS=====================//
     @FindBy(xpath = "//div[@id='wp-media-grid']//a[@role='button' and text()='Add New']")
-    WebElement btnAddNew;
+    private WebElement btnAddNew;
 
     @FindBy(xpath = "//button[contains(@class,'browser') and text()='Select Files']")
-    WebElement btnSelectFiles;
+    private WebElement btnSelectFiles;
 
     @FindBy(id = "wpcontent")
-    WebElement ctn_DropFile;
+    private WebElement ctn_DropFile;
 
     @FindBy(xpath = "//input[@type='file']")
-    WebElement txt_UploadFile;
+    private WebElement txt_UploadFile;
 
     public void clickAddNewButton() {
         click(btnAddNew);
     }
 
-    public void uploadFileByBrowseButton(String filePath) throws InterruptedException, AWTException {
-        uploadFiles.uploadByBrowseButton(filePath, btnSelectFiles);
+    public void uploadFileByBrowseButton(String filePath){
+        try {
+            uploadFiles.uploadByBrowseButton(filePath, btnSelectFiles);
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
     }
 
     public void uploadFileByDragDrop(String filePath) {
@@ -47,5 +51,4 @@ public class MediaLibraryPage extends BasePage {
     public void uploadFile(String filePath) {
         uploadFiles.uploadFile(filePath, txt_UploadFile, driver);
     }
-
 }

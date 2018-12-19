@@ -42,7 +42,7 @@
         <classes>
             <class name="tests.PostTests">
                 <methods>
-                    <include name="CreateNewPostWithGalery"/>
+                    <include name="CreateNewPostWithGallery"/>
                 </methods>
             </class>
         </classes>

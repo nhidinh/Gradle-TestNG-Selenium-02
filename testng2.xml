@@ -8,16 +8,28 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="username" value="nhidinh"/>
     <parameter name="encodedPassword" value="UDRhc3N3MHJkMSE=" />
-    <test name="Test Upload Files" enabled="true">
+    <test name="Test Upload Files" enabled="false">
         <classes>
             <class name="tests.MediaTests"/>
         </classes>
     </test>
 
-    <test name="Test With Sikuli" enabled="true">
+    <test name="Test With Sikuli" enabled="false">
         <classes>
             <class name="tests.CustomizeSiteTest"/>
         </classes>
 
     </test>
+
+
+    <test name="Delete Post Test" preserve-order="true" enabled="true">
+        <classes>
+            <class name="tests.DeletePostTests">
+                <methods>
+                    <include name="DeleteTheAddedPost"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
 </suite>

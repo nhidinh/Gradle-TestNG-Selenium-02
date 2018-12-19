@@ -19,34 +19,52 @@ public class AddMediaForm extends BasePage {
 
     //========ELEMENTS=======//
     @FindBy(xpath = "//input[@type='file']")
-    WebElement txt_UploadFile;
+    private WebElement txt_UploadFile;
     @FindBy(xpath = "//button[text()='Insert into post']")
-    WebElement btnInsertMedia;
+    private WebElement btnInsertMedia;
     @FindBy(xpath = "//div[@class='media-router']//a[text()='Upload Files']")
-    WebElement tabUploadFiles;
+    private WebElement tabUploadFiles;
     @FindBy(xpath = "//button[text()='Select Files']")
-    WebElement btnSelectFiles;
+    private WebElement btnSelectFiles;
 
     @FindBy(xpath = "//a[text()='Create Gallery']")
-    WebElement lnkCreateGallery;
+    private WebElement lnkCreateGallery;
 
     @FindBy(xpath = "//button[text()='Create a new gallery']")
-    WebElement btnCreateNewGallery;
+    private WebElement btnCreateNewGallery;
 
     @FindBy(xpath = "//div[contains(@class,'media-selection')]")
-    WebElement ctn_Selection;
+    private WebElement ctn_Selection;
+
+    @FindBy(xpath = "//button[text()='Insert gallery']")
+    private WebElement btnInsertGallery;
 
     //--------- VARIABLE ---------------//
     UploadFiles uploadFiles = new UploadFiles();
 
 
     //=========METHODS==================//
+    public void clickCreateGalleryLink() {
+        click(lnkCreateGallery);
+    }
+
+
+    public void clickCreateNewGallery(){
+        waitForElementIsClickable(btnCreateNewGallery);
+        click(btnCreateNewGallery);
+    }
     public void clickInsertMediaButton() {
+        waitForElementIsClickable(btnInsertMedia);
         click(btnInsertMedia);
     }
 
-    public void clickCreateGalleryLink() {
-        click(lnkCreateGallery);
+    public void clickInserGalleryButton(){
+        waitForElementIsClickable(btnInsertGallery);
+        click(btnInsertGallery);
+    }
+
+    public void selectUploadFilesTab() {
+        click(tabUploadFiles);
     }
 
     public void addMediaToPostByJS(String filePath) {
@@ -55,14 +73,5 @@ public class AddMediaForm extends BasePage {
 
     public void addMediaToPostByBrowseButton(String filePath) throws AWTException {
         uploadFiles.uploadByBrowseButton(filePath, btnSelectFiles);
-    }
-
-    public void selectUploadFilesTab() {
-        click(tabUploadFiles);
-    }
-
-    public void clickCreateNewGallery() throws InterruptedException {
-        waitForElementIsClickable(btnCreateNewGallery);
-        click(btnCreateNewGallery);
     }
 }

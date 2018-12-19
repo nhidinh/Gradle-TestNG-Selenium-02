@@ -4,55 +4,80 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 import org.testng.xml.XmlTest;
-import utilities.driver.DriverManager;
-import utilities.driver.DriverManagerFactory;
+import utilities.Browser;
+import utilities.Links;
 import utilities.driver.DriverType;
+import utilities.generator.PageGenerator;
 import utilities.logger.Log;
+import utils.setup_testsuite.LoginAPI;
+
+import java.io.IOException;
+import java.util.concurrent.ExecutionException;
+
 
 /**
  * User: Nhi Dinh
  * Date: 21/11/2018
  */
 public class BaseTest {
-    public WebDriver driver;
-    public DriverManager driverManager;
+    WebDriver driver;
+    PageGenerator Page;
 
     @BeforeSuite
-    public void beforeSuite(XmlTest test){
+    public void beforeSuite(XmlTest test) {
         String suite = test.getSuite().getName();
         Log.innitLog();
-        Log.info("START SUITE: "+ suite);
-    }
-    @BeforeTest
-    @Parameters("browser")
-    public void setup(DriverType browser, ITestContext context) {
-        driverManager = DriverManagerFactory.getManager(browser);
-        driver = driverManager.getDriver();
-        context.setAttribute("driver", driver);
-        driver.manage().window().maximize();
+        Log.info("START SUITE: " + suite);
     }
 
     @BeforeTest
-    public void setUpLoggerBeforeTest(ITestContext context){
+    @Parameters("browser")
+    public void Setup(DriverType browser, ITestContext context) {
+        Browser.Setup(browser, context);
+        driver = (WebDriver) context.getAttribute("driver");
+        Browser.Maximize();
+    }
+
+    @BeforeTest
+    public void setPage(){
+        Page = new PageGenerator(driver);
+    }
+
+    @BeforeTest
+    public void SetUpLoggerBeforeTest(ITestContext context) {
         String testCaseName = context.getName();
         Log.startTestCase(testCaseName);
     }
 
+    @BeforeClass
+    @Parameters({"username", "encodedPassword"})
+    public void LoginBeforeTest(String username, String encodedPassword, ITestContext testContext){
+        if(!testContext.getName().contains("Login Test")) {
+            String loginURI = Links.API_URI_LOGIN;
+            LoginAPI loginAPI = new LoginAPI();
+            try {
+                loginAPI.loginAPI(driver, loginURI);
+            } catch (ExecutionException | InterruptedException | IOException e) {
+                e.printStackTrace();
+            }
+        }
+        Page.Dashboard().Goto();
+    }
+
     @AfterTest
-    public void endLogAfterTest(ITestContext context){
+    public void EndLogAfterTest(ITestContext context) {
         String testCaseName = context.getName();
         Log.endTestCase(testCaseName);
     }
 
     @AfterTest
-    public void closeBrowser() {
+    public void CloseBrowser() {
         Log.info("Closing browser after test");
-        driver.manage().deleteAllCookies();
-        driver.quit();
+        Browser.Close();
     }
 
     @AfterSuite
-    public void afterSuite() {
+    public void AfterSuite() {
         Log.info("ENDING SUITE");
     }
 

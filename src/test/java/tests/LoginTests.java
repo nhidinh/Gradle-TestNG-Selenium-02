@@ -1,9 +1,8 @@
 package tests;
 
-import commontests.CommonLoginTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.LoginPage;
 
 /**
  * User: Nhi Dinh
@@ -13,18 +12,18 @@ import pages.LoginPage;
 public class LoginTests extends BaseTest {
     @Test(description = "Perform login successfully")
     @Parameters(value = {"username", "encodedPassword"})
-    public void LoginSuccessfully(String username, String encodedPassword) throws InterruptedException {
-        CommonLoginTest loginTest = new CommonLoginTest();
-        LoginPage loginPage = new LoginPage(driver);
-
-        loginTest.LoginSuccessfully(username, encodedPassword, driver);
-        loginPage.verifyLoginIsSuccessfully(username);
+    public void LoginSuccessfully(String username, String encodedPassword) {
+        Page.Login().Goto();
+        Page.Login().LoginWithUsername(username, encodedPassword);
+        Page.Login().VerifyLoginIsSuccessfully(username);
+        Page.TopNavigation().LogOut();
     }
 
     @Test(description = "Perform invalid login")
     @Parameters(value = {"username", "encodedPassword"})
-    public void LoginUnsuccessfully(String username, String invalidPass) throws InterruptedException{
-        CommonLoginTest loginTest = new CommonLoginTest();
-        loginTest.LoginSuccessfully(username,"invalidPassword", driver);
+    public void LoginUnsuccessfully(@Optional String username, @Optional String invalidPass){
+        Page.Login().Goto();
+        Page.Login().LoginWithUsername(username, "invalidPassword");
+        Page.Login().VerifyErrorMessageDisplays();
     }
 }

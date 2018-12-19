@@ -37,4 +37,6 @@ dependencies {
     //Sikuli
 //    compile group: 'org.sikuli', name: 'sikuli-api', version: '1.2.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile group: 'org.apache.httpcomponents', name: 'httpasyncclient', version: '4.1.4'
 }
