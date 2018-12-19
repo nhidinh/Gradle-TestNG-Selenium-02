@@ -3,6 +3,7 @@ package tests;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pages.LoginPage;
 
 /**
  * User: Nhi Dinh
@@ -13,17 +14,17 @@ public class LoginTests extends BaseTest {
     @Test(description = "Perform login successfully")
     @Parameters(value = {"username", "encodedPassword"})
     public void LoginSuccessfully(String username, String encodedPassword) {
-        Page.Login().Goto();
-        Page.Login().LoginWithUsername(username, encodedPassword);
-        Page.Login().VerifyLoginIsSuccessfully(username);
+        LoginPage loginPage = Page.Login().Goto();
+        loginPage.LoginWithUsername(username, encodedPassword);
+        loginPage.VerifyLoginIsSuccessfully(username);
         Page.TopNavigation().LogOut();
     }
 
     @Test(description = "Perform invalid login")
     @Parameters(value = {"username", "encodedPassword"})
     public void LoginUnsuccessfully(@Optional String username, @Optional String invalidPass){
-        Page.Login().Goto();
-        Page.Login().LoginWithUsername(username, "invalidPassword");
-        Page.Login().VerifyErrorMessageDisplays();
+        LoginPage loginPage = Page.Login().Goto();
+        loginPage.LoginWithUsername(username, "invalidPassword");
+        loginPage.VerifyErrorMessageDisplays();
     }
 }
