@@ -27,7 +27,15 @@
             </class>
         </classes>
     </test>
-
+    <test name="Login Test - Test Login With ExcelDataFile" enabled="true">
+        <classes>
+            <class name="tests.LoginTests">
+                <methods>
+                    <include name="LoginTestWithDataFile"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
     <test name="Add New Post Test" enabled="true">
         <classes>
@@ -58,8 +66,7 @@
         </classes>
     </test>
 
-
-    <test name="Delete a post Test" enabled="false">
+    <test name="Delete a post Test" enabled="true">
         <classes>
             <class name="tests.DeletePostTests"/>
         </classes>

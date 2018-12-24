@@ -17,8 +17,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Date;
-import java.util.Properties;
 
 /**
  * User: Nhi Dinh
@@ -27,11 +25,11 @@ import java.util.Properties;
 public class ExtentManager {
     private static ExtentReports extent;
     private static Platform platform = InitData.PLATFORM;
-    private static Date date = new Date();
     private static String timeStamp = InitData.TIMESTAMP;
+    private static String currentDir = System.getProperty("user.dir");
     private static String reportFileName = "ExtentReport3-"+timeStamp+".html";
-    private static String macPath = System.getProperty("user.dir")+ "/TestReport";
-    private static String windowsPath = System.getProperty("user.dir")+ "\\extentreports" + "\\Report-"+timeStamp;
+    private static String macPath = currentDir+ "/TestReport";
+    private static String windowsPath = currentDir+ "\\reports" + "\\Report-"+timeStamp;
     private static String macReportFileLoc = macPath + "/" + reportFileName;
     private static String winReportFileLoc = windowsPath + "\\" + reportFileName;
 
@@ -92,25 +90,6 @@ public class ExtentManager {
         } else {
             Log.info("Directory already exists: " + path);
         }
-    }
-
-    public static void turnOffFreemaker(){
-        Properties properties = System.getProperties();
-        properties.setProperty("-Dorg.freemarker.loggerLibrary", "none");
-    }
-
-
-
-    // Get Screenshot
-    public static String getScreenShot(WebDriver driver, String screenshotName) throws IOException {
-        TakesScreenshot screenshot = (TakesScreenshot) driver;
-        File source = screenshot.getScreenshotAs(OutputType.FILE);
-        String destination = windowsPath + "\\FailedTestsScreenshots\\"+screenshotName+timeStamp+".png";
-        File finalDestination = new File(destination);
-        FileUtils.copyFile(source, finalDestination);
-        String base = System.getProperty("user.dir")+ "\\extentreports";
-        String relative = new File(base).toURI().relativize(new File(destination).toURI()).getPath();
-        return relative;
     }
 
     public static String getBase64Screenshot(WebDriver driver, String screenshotName) throws IOException {
