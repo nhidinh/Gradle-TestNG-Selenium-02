@@ -16,7 +16,6 @@ public class SetUpTestSuite implements IAlterSuiteListener {
         for(XmlSuite suite:suites){
             XmlTest test = new XmlTest();
             test.setName("New Test Case");
-            suite.addTest(test);
         }
     }
 }

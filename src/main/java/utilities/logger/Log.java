@@ -2,7 +2,7 @@ package utilities.logger;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
-import utilities.datasetup.ReportData;
+import utilities.data.InitData;
 
 /**
  * User: Nhi Dinh
@@ -10,7 +10,7 @@ import utilities.datasetup.ReportData;
  */
 public class Log {
     private static Logger log = Logger.getLogger(Log.class.getName());
-    private static String timeStamp = ReportData.TIMESTAMP;
+    private static String timeStamp = InitData.TIMESTAMP;
 
     public static void innitLog() {
         String logFileName = timeStamp + ".log";

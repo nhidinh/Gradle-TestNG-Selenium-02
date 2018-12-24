@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.post_pages.AddNewPostPage;
 import pages.post_pages.PostsPage;
-import utilities.datasetup.DataSetUp;
+import utilities.data.DataSetUp;
 
 /**
  * User: Nhi Dinh

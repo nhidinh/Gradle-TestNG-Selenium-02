@@ -18,7 +18,7 @@ public class PageGenerator {
     public static WebDriver driver;
 
     public PageGenerator(WebDriver driver) {
-        this.driver = driver;
+        PageGenerator.driver = driver;
     }
 
     private <TPage extends BasePage> TPage GetPage(Class<TPage> pageClass) {

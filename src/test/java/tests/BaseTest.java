@@ -34,8 +34,8 @@ public class BaseTest {
     @Parameters("browser")
     public void Setup(DriverType browser, ITestContext context) {
         Browser.Setup(browser, context);
-        driver = (WebDriver) context.getAttribute("driver");
         Browser.Maximize();
+        driver = (WebDriver) context.getAttribute("driver");
     }
 
     @BeforeTest

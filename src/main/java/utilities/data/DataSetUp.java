@@ -1,8 +1,7 @@
-package utilities.datasetup;
+package utilities.data;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
-import pages.DashboardPage;
 import utilities.generator.DataGenerator;
 
 /**
@@ -11,13 +10,10 @@ import utilities.generator.DataGenerator;
  */
 public class DataSetUp{
     public void setUpPostData(ITestContext context, WebDriver driver){
-        DashboardPage dashboardPage = new DashboardPage(driver);
-
         DataGenerator dataGenerator = new DataGenerator();
         String body = dataGenerator.body();
         String title = dataGenerator.title();
 
-        context.setAttribute("dashboardPage", dashboardPage);
         context.setAttribute("title", title);
         context.setAttribute("body", body);
     }

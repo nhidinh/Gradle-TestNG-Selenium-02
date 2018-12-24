@@ -3,6 +3,7 @@ package pages.base_pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utilities.logger.Log;
 
 /**
  * User: Nhi Dinh
@@ -22,8 +23,18 @@ public class TopNavigation extends BasePage {
 
 
     public void LogOut(){
-        hoverMouseToElement(lblLoggedUsername);
-        click(lnkLogOut);
+        boolean isLoggedIn = false;
+        try{
+            isLoggedIn = isElementPresent(lblLoggedUsername);
+        }catch (Exception e){
+            if(e.getMessage().contains("Unable to locate element")){
+                Log.error("Not Log out as User is not logged in!");
+            }
+        }
+        if(isLoggedIn){
+            hoverMouseToElement(lblLoggedUsername);
+            click(lnkLogOut);
+        }
     }
 
 }
