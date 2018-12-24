@@ -26,7 +26,7 @@ public class PostTests extends BaseTest {
         Page.Posts().clickAddNewPost();
         Page.AddNewPost().addNewPost(title, body);
 
-        Page.AddNewPost().verifyNewPostIdAdded(title+"invalid");
+        Page.AddNewPost().verifyNewPostIdAdded(title);
     }
 
     @Test(description = "Create A New Post With Media Uploaded")
