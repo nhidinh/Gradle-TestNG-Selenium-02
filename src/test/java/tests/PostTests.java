@@ -4,7 +4,7 @@ import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utilities.Links;
-import utilities.datasetup.DataSetUp;
+import utilities.data.DataSetUp;
 
 /**
  * User: Nhi Dinh

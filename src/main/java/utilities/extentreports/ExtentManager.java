@@ -10,8 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import utilities.datasetup.DataSetUp;
-import utilities.datasetup.ReportData;
+import utilities.data.InitData;
 import utilities.logger.Log;
 
 import java.io.File;
@@ -27,15 +26,14 @@ import java.util.Properties;
  */
 public class ExtentManager {
     private static ExtentReports extent;
-    private static Platform platform = ReportData.PLATFORM;
+    private static Platform platform = InitData.PLATFORM;
     private static Date date = new Date();
-    private static String timeStamp = ReportData.TIMESTAMP;
+    private static String timeStamp = InitData.TIMESTAMP;
     private static String reportFileName = "ExtentReport3-"+timeStamp+".html";
     private static String macPath = System.getProperty("user.dir")+ "/TestReport";
     private static String windowsPath = System.getProperty("user.dir")+ "\\extentreports" + "\\Report-"+timeStamp;
     private static String macReportFileLoc = macPath + "/" + reportFileName;
     private static String winReportFileLoc = windowsPath + "\\" + reportFileName;
-    DataSetUp data = new DataSetUp();
 
     public static ExtentReports getInstance() {
         if (extent == null)

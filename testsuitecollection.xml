@@ -2,7 +2,7 @@
 
 <suite name="AllSuites">
     <suite-files>
-        <suite-file path="testng.xml"/>
+        <suite-file path="src/test/java/testng.xml"/>
         <suite-file path="testng2.xml"/>
     </suite-files>
 </suite>

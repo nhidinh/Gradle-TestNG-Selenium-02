@@ -22,9 +22,9 @@ public class TestListener implements ITestListener {
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
     private static String methodDes;
     private static String message;
-
+    private static WebDriver driver;
     @Override
-    public synchronized void onStart(ITestContext context) {
+    public void onStart(ITestContext iTestContext) {
         //Perform Onstart action
     }
 
@@ -64,7 +64,8 @@ public class TestListener implements ITestListener {
         message = setMessage("FAILED", methodDes);
         test.get().fail(message);
         try {
-            WebDriver driver = (WebDriver) result.getTestContext().getAttribute("driver");
+            ITestContext context = result.getTestContext();
+            driver = (WebDriver) context.getAttribute("driver");
             String base64Screenshot = ExtentManager.getBase64Screenshot(driver, result.getName());
             MediaEntityModelProvider mediaModel = MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build();
             test.get().fail("image:", mediaModel);
@@ -87,7 +88,8 @@ public class TestListener implements ITestListener {
         Log.info("onTestFailedButWithinSuccessPercentage for " + methodDes );
     }
 
-    public String setMessage(String status, String description){
+    private String setMessage(String status, String description){
         return  "++++++++ TEST "+status+": " + description + " ++++++++";
     }
+
 }

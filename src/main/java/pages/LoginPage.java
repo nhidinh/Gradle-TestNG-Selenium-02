@@ -39,8 +39,13 @@ public class LoginPage extends BasePage {
     // ------------PAGE METHODS ---------------------
 
     public void LoginWithUsername(String username, String encodedPassword) {
-        byte[] decodedPassword = Base64.getDecoder().decode(encodedPassword);
-        String password = new String(decodedPassword);
+        String password;
+        try{
+            byte[] decodedPassword = Base64.getDecoder().decode(encodedPassword);
+            password = new String(decodedPassword);
+        }catch (Exception e){
+            password = encodedPassword;
+        }
         waitForPageLoad();
         setText(txt_username, username);
         setText(txt_password, password);
