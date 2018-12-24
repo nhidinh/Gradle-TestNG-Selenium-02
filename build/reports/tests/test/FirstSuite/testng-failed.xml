@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="-1" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [FirstSuite]">
-  <parameter name="browser" value="firefox"/>
-  <test verbose="0" name="FirstTest(failed)">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="encodedPassword" value="UDRhc3N3MHJkMSE="/>
+  <parameter name="username" value="nhidinh"/>
+  <listeners>
+    <listener class-name="utils.Listeners.TestListener"/>
+  </listeners>
+  <test verbose="0" name="Add New Post Test With Gallery(failed)">
     <classes>
-      <class name="tests.LoginTests">
+      <class name="tests.PostTests">
         <methods>
+          <include name="CreateNewPostWithGalery" invocation-numbers="0"/>
+          <include name="endLogAfterTest"/>
+          <include name="setUpData"/>
           <include name="closeBrowser"/>
           <include name="AfterMethod"/>
+          <include name="setUpLoggerBeforeTest"/>
           <include name="BeforeMethod"/>
-          <include name="login" invocation-numbers="0"/>
+          <include name="LoginStep"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- tests.LoginTests -->
+      </class> <!-- tests.PostTests -->
     </classes>
-  </test> <!-- FirstTest(failed) -->
+  </test> <!-- Add New Post Test With Gallery(failed) -->
 </suite> <!-- Failed suite [FirstSuite] -->

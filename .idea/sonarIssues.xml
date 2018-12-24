@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/a.dummy">
           <value>
             <set />
@@ -13,7 +18,127 @@
             <set />
           </value>
         </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/tmp__AddNewPostPage.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/sample-galen-tests-master/Log4j/log4j-application.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_100408_log.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_103528_log.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_133616_log.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_134632.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_134753.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_135028.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_135935.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_140246.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_140855.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_142207.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_144029.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_153526.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_153636.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_154411.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_161816.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_162830.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_163142.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181211_164049.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/20181212_135359.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log/log.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Log4j/log.log">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/build/reports/tests/test/emailable-report.html">
           <value>
             <set />
           </value>
@@ -23,7 +148,47 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/build/test-results/test/TEST-tests.LoginTests.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/gradlew">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/log4j.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/logfile.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/logs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/logs/20181205_095622_log.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/logs/NewLog.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/logs/log.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/logs/log02.log">
           <value>
             <set />
           </value>
@@ -68,12 +233,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/pages/EditPostPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/pages/HomePage.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/pages/LoginPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/pages/MediaLibraryPage.java">
           <value>
             <set />
           </value>
@@ -88,7 +263,82 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/pages/base_pages/BasePage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/pages/base_pages/Pages.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/pages/media_pages/MediaLibraryPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/pages/post_pages/AddMediaForm.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/pages/post_pages/AddNewPostPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/pages/post_pages/EditPostPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/pages/post_pages/PostDetailPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/pages/post_pages/PostsPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/test/TC01LoginSuccessfully.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/Browser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/CustomKeywords/DriverFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/CustomKeywords/JavaScriptKeyWords.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/CustomKeywords/ObjectIdentity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/CustomKeywords/UploadFiles.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/CustomSystemProperties.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/ExtentReports/ExtentManager.java">
           <value>
             <set />
           </value>
@@ -99,6 +349,51 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/utilities/Links.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/Logger/Log.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/Logger/Log4j.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/Logger/SystemLog.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/TestListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/WebElementHelper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/customkeywords/ObjectIdentity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/customkeywords/UploadFiles.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utilities/extentreports/ExtentManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/log4j.properties">
           <value>
             <set />
           </value>
@@ -128,6 +423,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/setup_testsuite/SetUpTestSuite.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/test/java/test/TC01LoginSuccessfully.java">
           <value>
             <set />
@@ -138,12 +438,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/tests/CustomizeSiteTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/test/java/tests/DeletePostTests.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/test/java/tests/LoginTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/tests/MediaTests.java">
           <value>
             <set />
           </value>
@@ -173,7 +483,57 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/CustomKeywords/UploadFiles.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/test/java/utils/DataSetup/DataSetUp.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/DataSetup/ReportData.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Driver/ChromeDriverManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Driver/DriverManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Driver/DriverManagerFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Driver/DriverType.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Driver/EdgeDriverManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Driver/FirefoxDriverManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Driver/IEDriverManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Driver/SafariDriverManager.java">
           <value>
             <set />
           </value>
@@ -204,6 +564,71 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/test/java/utils/Listeners/TestListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Logger/Log.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Logger/Log4j.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Logger/Logger.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/Logger/SystemLog.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/SetUpTestSuite.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/SetUpTestSuite/SetUpTestSuite.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/SetUpTestSuite/TestListener/TestListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/SetUpTestSuite/testlistener/TestListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/TestListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/setup_testsuite/SetUpTestSuite.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/testlistener/TestListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/utils/testlistener/setup_testsuite/SetUpTestSuite.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/resources/log4j.properties">
           <value>
             <set />
           </value>
@@ -263,6 +688,171 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/dependency_injection/IDatabase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/dependency_injection/ILogger.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/dependency_injection/Interface/IDatabase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/dependency_injection/Interface/IEmailSender.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/dependency_injection/Interface/ILogger.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/dependency_injection/Interface/implement/Database.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/dependency_injection/implement/Database.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/dependency_injection/implement/EmailSender.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/dependency_injection/implement/Logger.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/Break.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/DIContainer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/Interface/IDatabase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/Interface/IEmailSender.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/Interface/ILogger.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/data/SampleUserData.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/data/sampleUserData.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/functions/Cart.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/functions/Certificate.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/functions/Checkout.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/functions/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/implement/Database.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/implement/EmailSender.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/implement/Logger.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/dependency_injection/tests/testCheckout.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/oop/FulltimeTeacher.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/oop/HighSchoolStudent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/oop/PrimarySchoolStudent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/oop/Rectangle.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/oop/Sharp.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/oop/Student.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/oop/Teacher.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/oop/oop_tests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/javaPractice/oop/oop_tests/oop_tests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../TestNG-Gradle-Selenium-01/src/test/java/tests/BaseTest.java">
           <value>
             <set />
@@ -303,6 +893,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/Rima-Tests/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/Rima-Tests/src/test/java/basetest/BaseTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../rimaRAF/build.gradle">
           <value>
             <set />
@@ -319,6 +919,111 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/pages/BasePage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/pages/DashboardPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/pages/HomePage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/pages/LoginPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/pages/post_pages/AddMediaForm.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/pages/post_pages/AddNewPostPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/pages/post_pages/EditPostPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/pages/post_pages/PostDetailPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/utilities/Generator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/utilities/Links.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/utilities/customkeywords/JavaScriptKeywords.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/main/java/utilities/customkeywords/UploadFiles.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/test/java/settests/BaseTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/test/java/tests/BaseTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-framework/src/test/java/tests/BaseTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-page-objects/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-page-objects/src/test/java/basetest/BaseTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-page-objects/src/test/java/testcases/LoginTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-regression-tests/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-regression-tests/src/test/java/LoginTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-regression-tests/src/test/java/tests/LoginTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rimaRAF/rima-regression/src/test/java/tests/LoginTests.java">
           <value>
             <set />
           </value>

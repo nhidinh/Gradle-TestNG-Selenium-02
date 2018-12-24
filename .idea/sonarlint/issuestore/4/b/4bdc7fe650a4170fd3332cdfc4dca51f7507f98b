@@ -1,3 +1,7 @@
 
-{squid:S00116"WRename this field "txt_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×æ‰™úÿÿÿÿ8Ó¥ùóó,
-vsquid:S00116"WRename this field "txt_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î÷ğ§8Ó¥ùóó,
+zsquid:S3008"WRename this field "txt_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×æ‰™úÿÿÿÿ8²¨Òû,
+msquid:S00100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š¹úç8›Ö˜Òû,
+rsquid:S001002"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯—¥Ëúÿÿÿÿ8»±§Òû,
+msquid:S00100;"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ı²8ï´Òû,
+rsquid:S00100)"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É£Ì•úÿÿÿÿ8ÔË©Òû,
+zsquid:S3008"WRename this field "txt_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ìÉ¥şÿÿÿÿ8İñ§Òû,

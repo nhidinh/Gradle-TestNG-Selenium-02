@@ -9,22 +9,29 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">FirstSuite</th></tr>
-<tr><td><a href="#t0">FirstTest</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">8,150</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Login Test - Login Successfully</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">12,163</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Login Test - Invalid Login Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">6,894</td><td></td><td></td></tr>
+<tr><td><a href="#t2">Add New Post Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">16,993</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">Add New Post Test With Gallery</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">20,997</td><td></td><td></td></tr>
+<tr><td><a href="#t4">Add New Post Test With Media</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">11,240</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t5">Test with Test Steps</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">12,352</td><td></td><td></td></tr>
+<tr><td><a href="#t6">Test Upload Files</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">8,623</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">7</th><th class="num">0</th><th class="num">0</th><th class="num">89,262</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">FirstSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">FirstTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">tests.LoginTests</td><td><a href="#m0">login</a></td><td rowspan="1">1542783946406</td><td rowspan="1">12</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">FirstSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login Test - Login Successfully &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">tests.LoginTests</td><td><a href="#m0">LoginSuccessfully</a></td><td rowspan="1">1543978138408</td><td rowspan="1">5691</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Login Test - Invalid Login Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">tests.LoginTests</td><td><a href="#m1">LoginUnsuccessfully</a></td><td rowspan="1">1543978149326</td><td rowspan="1">1935</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">Add New Post Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">tests.PostTests</td><td><a href="#m2">CreateANewPost</a></td><td rowspan="1">1543978163279</td><td rowspan="1">4931</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">Add New Post Test With Gallery &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">tests.PostTests</td><td><a href="#m3">CreateNewPostWithGalery</a></td><td rowspan="1">1543978177013</td><td rowspan="1">12273</td></tr></tbody>
+<tbody id="t4"><tr><th colspan="4">Add New Post Test With Media &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">tests.PostTests</td><td><a href="#m4">CreateNewPostWithMedia</a></td><td rowspan="1">1543978197240</td><td rowspan="1">3341</td></tr></tbody>
+<tbody id="t5"><tr><th colspan="4">Test with Test Steps &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">tests.DeletePostTests</td><td><a href="#m5">DeleteTheAddedPost</a></td><td rowspan="1">1543978208385</td><td rowspan="1">4608</td></tr></tbody>
+<tbody id="t6"><tr><th colspan="4">Test Upload Files &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">tests.MediaTests</td><td><a href="#m6">uploadImageByDragDrop</a></td><td rowspan="1">1543978220918</td><td rowspan="1">746</td></tr></tbody>
 </table>
-<h2>FirstTest</h2><h3 id="m0">tests.LoginTests#login</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>ndqa.kms@gmail.com</td><td>Password1#</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.NullPointerException
-	at java.util.Objects.requireNonNull(Objects.java:203)
-	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:106)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:85)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
-	at pages.BasePage.&lt;init&gt;(BasePage.java:23)
-	at pages.HomePage.&lt;init&gt;(HomePage.java:12)
-	at tests.LoginTests.login(LoginTests.java:24)
-	at com.sun.proxy.$Proxy1.stop(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 46 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Login Test - Login Successfully</h2><h3 id="m0">tests.LoginTests#LoginSuccessfully</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>nhidinh</td><td>UDRhc3N3MHJkMSE=</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Login Test - Invalid Login Test</h2><h3 id="m1">tests.LoginTests#LoginUnsuccessfully</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>nhidinh</td><td>UDRhc3N3MHJkMSE=</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Add New Post Test</h2><h3 id="m2">tests.PostTests#CreateANewPost</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@78453033</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Add New Post Test With Gallery</h2><h3 id="m3">tests.PostTests#CreateNewPostWithGalery</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@1d3a0925</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Add New Post Test With Media</h2><h3 id="m4">tests.PostTests#CreateNewPostWithMedia</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@1d686a75</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test with Test Steps</h2><h3 id="m5">tests.DeletePostTests#DeleteTheAddedPost</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@4d1a6d0f</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test Upload Files</h2><h3 id="m6">tests.MediaTests#uploadImageByDragDrop</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

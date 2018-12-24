@@ -6,7 +6,7 @@
 
     <appender name="fileAppender" class="org.apache.log4j.FileAppender">
         <param name="Threshold" value="INFO" />
-        <param name="File" value="Log/${logFileName}"/>
+        <param name="File" value="${logLocation}"/>
         <param name="immediateFlush" value="true"/>
         <param name="threshold" value="debug"/>
         <param name="append" value="true"/>

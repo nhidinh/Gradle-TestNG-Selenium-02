@@ -1,57 +1,640 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="10" total="17" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="FirstSuite" duration-ms="8150" started-at="2018-11-21T07:05:38Z" finished-at="2018-11-21T07:05:46Z">
+  <suite name="FirstSuite" duration-ms="89723" started-at="2018-12-05T02:48:52Z" finished-at="2018-12-05T02:50:22Z">
     <groups>
     </groups>
-    <test name="FirstTest" duration-ms="8150" started-at="2018-11-21T07:05:38Z" finished-at="2018-11-21T07:05:46Z">
+    <test name="Login Test - Login Successfully" duration-ms="12163" started-at="2018-12-05T02:48:52Z" finished-at="2018-12-05T02:49:04Z">
       <class name="tests.LoginTests">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTests@63bdea9e]" name="setup" is-config="true" duration-ms="8126" started-at="2018-11-21T14:05:38Z" finished-at="2018-11-21T14:05:46Z">
+        <test-method status="PASS" signature="setUpLoggerBeforeTest(org.testng.ITestContext)[pri:0, instance:tests.LoginTests@595dbe66]" name="setUpLoggerBeforeTest" is-config="true" duration-ms="14" started-at="2018-12-05T09:48:52Z" finished-at="2018-12-05T09:48:52Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox]]>
+                <![CDATA[org.testng.TestRunner@5974f39f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpLoggerBeforeTest -->
+        <test-method status="PASS" signature="setup(java.lang.String, org.testng.ITestContext)[pri:0, instance:tests.LoginTests@595dbe66]" name="setup" is-config="true" duration-ms="5708" started-at="2018-12-05T09:48:52Z" finished-at="2018-12-05T09:48:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@5974f39f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="login(java.lang.String, java.lang.String)[pri:0, instance:tests.LoginTests@63bdea9e]" name="login" duration-ms="12" started-at="2018-11-21T14:05:46Z" description="Perform login successfully for Gmail page" data-provider="credentialData" finished-at="2018-11-21T14:05:46Z">
+        <test-method status="PASS" signature="LoginSuccessfully(java.lang.String, java.lang.String)[pri:0, instance:tests.LoginTests@595dbe66]" name="LoginSuccessfully" duration-ms="5691" started-at="2018-12-05T09:48:58Z" description="Perform login successfully" finished-at="2018-12-05T09:49:04Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ndqa.kms@gmail.com]]>
+                <![CDATA[nhidinh]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Password1#]]>
+                <![CDATA[UDRhc3N3MHJkMSE=]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerExceptionat java.util.Objects.requireNonNull(Objects.java:203)at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:106)at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:85)at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)at pages.BasePage.<init>(BasePage.java:23)at pages.HomePage.<init>(HomePage.java:12)at tests.LoginTests.login(LoginTests.java:24)at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.lang.reflect.Method.invoke(Method.java:498)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:139)at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:89)at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.lang.reflect.Method.invoke(Method.java:498)at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)at com.sun.proxy.$Proxy1.stop(Unknown Source)at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:123)at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.lang.reflect.Method.invoke(Method.java:498)at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)at java.lang.Thread.run(Thread.java:748)]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="BeforeMethod()[pri:0, instance:tests.LoginTests@63bdea9e]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2018-11-21T14:05:46Z" finished-at="2018-11-21T14:05:46Z">
+        </test-method> <!-- LoginSuccessfully -->
+        <test-method status="PASS" signature="BeforeMethod(java.lang.reflect.Method)[pri:0, instance:tests.LoginTests@595dbe66]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T09:48:58Z" finished-at="2018-12-05T09:48:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTests.LoginSuccessfully(java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeMethod -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:tests.LoginTests@63bdea9e]" name="AfterMethod" is-config="true" duration-ms="1" started-at="2018-11-21T14:05:46Z" finished-at="2018-11-21T14:05:46Z">
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:tests.LoginTests@595dbe66]" name="AfterMethod" is-config="true" duration-ms="1" started-at="2018-12-05T09:49:04Z" finished-at="2018-12-05T09:49:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:tests.LoginTests@63bdea9e]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2018-11-21T14:05:46Z" finished-at="2018-11-21T14:05:46Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:tests.LoginTests@595dbe66]" name="closeBrowser" is-config="true" duration-ms="682" started-at="2018-12-05T09:49:04Z" finished-at="2018-12-05T09:49:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="endLogAfterTest(org.testng.ITestContext)[pri:0, instance:tests.LoginTests@595dbe66]" name="endLogAfterTest" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:04Z" finished-at="2018-12-05T09:49:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5974f39f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endLogAfterTest -->
       </class> <!-- tests.LoginTests -->
-    </test> <!-- FirstTest -->
+    </test> <!-- Login Test - Login Successfully -->
+    <test name="Login Test - Invalid Login Test" duration-ms="6894" started-at="2018-12-05T02:49:05Z" finished-at="2018-12-05T02:49:11Z">
+      <class name="tests.LoginTests">
+        <test-method status="PASS" signature="setUpLoggerBeforeTest(org.testng.ITestContext)[pri:0, instance:tests.LoginTests@134ab971]" name="setUpLoggerBeforeTest" is-config="true" duration-ms="1" started-at="2018-12-05T09:49:05Z" finished-at="2018-12-05T09:49:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@372f7f65]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpLoggerBeforeTest -->
+        <test-method status="PASS" signature="setup(java.lang.String, org.testng.ITestContext)[pri:0, instance:tests.LoginTests@134ab971]" name="setup" is-config="true" duration-ms="4300" started-at="2018-12-05T09:49:05Z" finished-at="2018-12-05T09:49:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@372f7f65]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="BeforeMethod(java.lang.reflect.Method)[pri:0, instance:tests.LoginTests@134ab971]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:09Z" finished-at="2018-12-05T09:49:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTests.LoginUnsuccessfully(java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeMethod -->
+        <test-method status="PASS" signature="LoginUnsuccessfully(java.lang.String, java.lang.String)[pri:0, instance:tests.LoginTests@134ab971]" name="LoginUnsuccessfully" duration-ms="1935" started-at="2018-12-05T09:49:09Z" description="Perform invalid login" finished-at="2018-12-05T09:49:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nhidinh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[UDRhc3N3MHJkMSE=]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginUnsuccessfully -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:tests.LoginTests@134ab971]" name="AfterMethod" is-config="true" duration-ms="1" started-at="2018-12-05T09:49:11Z" finished-at="2018-12-05T09:49:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:tests.LoginTests@134ab971]" name="closeBrowser" is-config="true" duration-ms="647" started-at="2018-12-05T09:49:11Z" finished-at="2018-12-05T09:49:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="endLogAfterTest(org.testng.ITestContext)[pri:0, instance:tests.LoginTests@134ab971]" name="endLogAfterTest" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:11Z" finished-at="2018-12-05T09:49:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@372f7f65]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endLogAfterTest -->
+      </class> <!-- tests.LoginTests -->
+    </test> <!-- Login Test - Invalid Login Test -->
+    <test name="Add New Post Test" duration-ms="16993" started-at="2018-12-05T02:49:11Z" finished-at="2018-12-05T02:49:28Z">
+      <class name="tests.PostTests">
+        <test-method status="PASS" signature="setUpLoggerBeforeTest(org.testng.ITestContext)[pri:0, instance:tests.PostTests@704086a0]" name="setUpLoggerBeforeTest" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:11Z" finished-at="2018-12-05T09:49:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@78453033]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpLoggerBeforeTest -->
+        <test-method status="PASS" signature="setup(java.lang.String, org.testng.ITestContext)[pri:0, instance:tests.PostTests@704086a0]" name="setup" is-config="true" duration-ms="4328" started-at="2018-12-05T09:49:11Z" finished-at="2018-12-05T09:49:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@78453033]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="LoginStep(java.lang.String, java.lang.String)[pri:0, instance:tests.PostTests@704086a0]" name="LoginStep" is-config="true" duration-ms="3145" started-at="2018-12-05T09:49:16Z" finished-at="2018-12-05T09:49:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nhidinh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[UDRhc3N3MHJkMSE=]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginStep -->
+        <test-method status="PASS" signature="setUpData(org.testng.ITestContext)[pri:0, instance:tests.PostTests@704086a0]" name="setUpData" is-config="true" duration-ms="3845" started-at="2018-12-05T09:49:19Z" finished-at="2018-12-05T09:49:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@78453033]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpData -->
+        <test-method status="PASS" signature="CreateANewPost(org.testng.ITestContext)[pri:0, instance:tests.PostTests@704086a0]" name="CreateANewPost" duration-ms="4931" started-at="2018-12-05T09:49:23Z" description="Create A New Post" finished-at="2018-12-05T09:49:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@78453033]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateANewPost -->
+        <test-method status="PASS" signature="BeforeMethod(java.lang.reflect.Method)[pri:0, instance:tests.PostTests@704086a0]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:23Z" finished-at="2018-12-05T09:49:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.PostTests.CreateANewPost(org.testng.ITestContext)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeMethod -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:tests.PostTests@704086a0]" name="closeBrowser" is-config="true" duration-ms="733" started-at="2018-12-05T09:49:28Z" finished-at="2018-12-05T09:49:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:tests.PostTests@704086a0]" name="AfterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:28Z" finished-at="2018-12-05T09:49:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="endLogAfterTest(org.testng.ITestContext)[pri:0, instance:tests.PostTests@704086a0]" name="endLogAfterTest" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:28Z" finished-at="2018-12-05T09:49:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@78453033]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endLogAfterTest -->
+      </class> <!-- tests.PostTests -->
+    </test> <!-- Add New Post Test -->
+    <test name="Add New Post Test With Gallery" duration-ms="20997" started-at="2018-12-05T02:49:28Z" finished-at="2018-12-05T02:49:49Z">
+      <class name="tests.PostTests">
+        <test-method status="PASS" signature="setUpLoggerBeforeTest(org.testng.ITestContext)[pri:0, instance:tests.PostTests@7a09da0f]" name="setUpLoggerBeforeTest" is-config="true" duration-ms="1" started-at="2018-12-05T09:49:29Z" finished-at="2018-12-05T09:49:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d3a0925]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpLoggerBeforeTest -->
+        <test-method status="PASS" signature="setup(java.lang.String, org.testng.ITestContext)[pri:0, instance:tests.PostTests@7a09da0f]" name="setup" is-config="true" duration-ms="4384" started-at="2018-12-05T09:49:29Z" finished-at="2018-12-05T09:49:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d3a0925]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="LoginStep(java.lang.String, java.lang.String)[pri:0, instance:tests.PostTests@7a09da0f]" name="LoginStep" is-config="true" duration-ms="3619" started-at="2018-12-05T09:49:33Z" finished-at="2018-12-05T09:49:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nhidinh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[UDRhc3N3MHJkMSE=]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginStep -->
+        <test-method status="PASS" signature="setUpData(org.testng.ITestContext)[pri:0, instance:tests.PostTests@7a09da0f]" name="setUpData" is-config="true" duration-ms="1" started-at="2018-12-05T09:49:37Z" finished-at="2018-12-05T09:49:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d3a0925]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpData -->
+        <test-method status="PASS" signature="CreateNewPostWithGalery(org.testng.ITestContext)[pri:0, instance:tests.PostTests@7a09da0f]" name="CreateNewPostWithGalery" duration-ms="12273" started-at="2018-12-05T09:49:37Z" description="Create A New Post With New Gallery" finished-at="2018-12-05T09:49:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d3a0925]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateNewPostWithGalery -->
+        <test-method status="PASS" signature="BeforeMethod(java.lang.reflect.Method)[pri:0, instance:tests.PostTests@7a09da0f]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:37Z" finished-at="2018-12-05T09:49:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.PostTests.CreateNewPostWithGalery(org.testng.ITestContext) throws java.awt.AWTException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeMethod -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:tests.PostTests@7a09da0f]" name="closeBrowser" is-config="true" duration-ms="708" started-at="2018-12-05T09:49:49Z" finished-at="2018-12-05T09:49:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:tests.PostTests@7a09da0f]" name="AfterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:49Z" finished-at="2018-12-05T09:49:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="endLogAfterTest(org.testng.ITestContext)[pri:0, instance:tests.PostTests@7a09da0f]" name="endLogAfterTest" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:49Z" finished-at="2018-12-05T09:49:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d3a0925]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endLogAfterTest -->
+      </class> <!-- tests.PostTests -->
+    </test> <!-- Add New Post Test With Gallery -->
+    <test name="Add New Post Test With Media" duration-ms="11240" started-at="2018-12-05T02:49:50Z" finished-at="2018-12-05T02:50:01Z">
+      <class name="tests.PostTests">
+        <test-method status="PASS" signature="setUpLoggerBeforeTest(org.testng.ITestContext)[pri:0, instance:tests.PostTests@4176459]" name="setUpLoggerBeforeTest" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:50Z" finished-at="2018-12-05T09:49:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d686a75]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpLoggerBeforeTest -->
+        <test-method status="PASS" signature="setup(java.lang.String, org.testng.ITestContext)[pri:0, instance:tests.PostTests@4176459]" name="setup" is-config="true" duration-ms="4253" started-at="2018-12-05T09:49:50Z" finished-at="2018-12-05T09:49:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d686a75]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="LoginStep(java.lang.String, java.lang.String)[pri:0, instance:tests.PostTests@4176459]" name="LoginStep" is-config="true" duration-ms="2933" started-at="2018-12-05T09:49:54Z" finished-at="2018-12-05T09:49:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nhidinh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[UDRhc3N3MHJkMSE=]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginStep -->
+        <test-method status="PASS" signature="setUpData(org.testng.ITestContext)[pri:0, instance:tests.PostTests@4176459]" name="setUpData" is-config="true" duration-ms="1" started-at="2018-12-05T09:49:57Z" finished-at="2018-12-05T09:49:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d686a75]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpData -->
+        <test-method status="PASS" signature="BeforeMethod(java.lang.reflect.Method)[pri:0, instance:tests.PostTests@4176459]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2018-12-05T09:49:57Z" finished-at="2018-12-05T09:49:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.PostTests.CreateNewPostWithMedia(org.testng.ITestContext) throws java.awt.AWTException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeMethod -->
+        <test-method status="PASS" signature="CreateNewPostWithMedia(org.testng.ITestContext)[pri:0, instance:tests.PostTests@4176459]" name="CreateNewPostWithMedia" duration-ms="3341" started-at="2018-12-05T09:49:57Z" description="Create A New Post With Media Uploaded" finished-at="2018-12-05T09:50:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d686a75]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateNewPostWithMedia -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:tests.PostTests@4176459]" name="closeBrowser" is-config="true" duration-ms="702" started-at="2018-12-05T09:50:00Z" finished-at="2018-12-05T09:50:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:tests.PostTests@4176459]" name="AfterMethod" is-config="true" duration-ms="0" started-at="2018-12-05T09:50:00Z" finished-at="2018-12-05T09:50:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="endLogAfterTest(org.testng.ITestContext)[pri:0, instance:tests.PostTests@4176459]" name="endLogAfterTest" is-config="true" duration-ms="1" started-at="2018-12-05T09:50:01Z" finished-at="2018-12-05T09:50:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d686a75]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endLogAfterTest -->
+      </class> <!-- tests.PostTests -->
+    </test> <!-- Add New Post Test With Media -->
+    <test name="Test with Test Steps" duration-ms="12352" started-at="2018-12-05T02:50:01Z" finished-at="2018-12-05T02:50:13Z">
+      <class name="tests.DeletePostTests">
+        <test-method status="PASS" signature="setUpLoggerBeforeTest(org.testng.ITestContext)[pri:0, instance:tests.DeletePostTests@1439ee36]" name="setUpLoggerBeforeTest" is-config="true" duration-ms="1" started-at="2018-12-05T09:50:01Z" finished-at="2018-12-05T09:50:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4d1a6d0f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpLoggerBeforeTest -->
+        <test-method status="PASS" signature="setup(java.lang.String, org.testng.ITestContext)[pri:0, instance:tests.DeletePostTests@1439ee36]" name="setup" is-config="true" duration-ms="4215" started-at="2018-12-05T09:50:01Z" finished-at="2018-12-05T09:50:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@4d1a6d0f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="LoginStep(java.lang.String, java.lang.String)[pri:0, instance:tests.DeletePostTests@1439ee36]" name="LoginStep" is-config="true" duration-ms="2828" started-at="2018-12-05T09:50:05Z" finished-at="2018-12-05T09:50:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nhidinh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[UDRhc3N3MHJkMSE=]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginStep -->
+        <test-method status="PASS" signature="setUpData(org.testng.ITestContext)[pri:0, instance:tests.DeletePostTests@1439ee36]" name="setUpData" is-config="true" duration-ms="2" started-at="2018-12-05T09:50:08Z" finished-at="2018-12-05T09:50:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4d1a6d0f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpData -->
+        <test-method status="PASS" signature="BeforeMethod(java.lang.reflect.Method)[pri:0, instance:tests.DeletePostTests@1439ee36]" name="BeforeMethod" is-config="true" duration-ms="1" started-at="2018-12-05T09:50:08Z" finished-at="2018-12-05T09:50:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.DeletePostTests.DeleteTheAddedPost(org.testng.ITestContext)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeMethod -->
+        <test-method status="PASS" signature="DeleteTheAddedPost(org.testng.ITestContext)[pri:1, instance:tests.DeletePostTests@1439ee36]" name="DeleteTheAddedPost" duration-ms="4608" started-at="2018-12-05T09:50:08Z" description="Delete a newly added Post" finished-at="2018-12-05T09:50:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4d1a6d0f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteTheAddedPost -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:tests.DeletePostTests@1439ee36]" name="AfterMethod" is-config="true" duration-ms="1" started-at="2018-12-05T09:50:12Z" finished-at="2018-12-05T09:50:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:tests.DeletePostTests@1439ee36]" name="closeBrowser" is-config="true" duration-ms="690" started-at="2018-12-05T09:50:12Z" finished-at="2018-12-05T09:50:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="endLogAfterTest(org.testng.ITestContext)[pri:0, instance:tests.DeletePostTests@1439ee36]" name="endLogAfterTest" is-config="true" duration-ms="1" started-at="2018-12-05T09:50:13Z" finished-at="2018-12-05T09:50:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4d1a6d0f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endLogAfterTest -->
+      </class> <!-- tests.DeletePostTests -->
+    </test> <!-- Test with Test Steps -->
+    <test name="Test Upload Files" duration-ms="8623" started-at="2018-12-05T02:50:13Z" finished-at="2018-12-05T02:50:22Z">
+      <class name="tests.MediaTests">
+        <test-method status="PASS" signature="setup(java.lang.String, org.testng.ITestContext)[pri:0, instance:tests.MediaTests@1f474d7e]" name="setup" is-config="true" duration-ms="4260" started-at="2018-12-05T09:50:13Z" finished-at="2018-12-05T09:50:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@576df26a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="setUpLoggerBeforeTest(org.testng.ITestContext)[pri:0, instance:tests.MediaTests@1f474d7e]" name="setUpLoggerBeforeTest" is-config="true" duration-ms="0" started-at="2018-12-05T09:50:13Z" finished-at="2018-12-05T09:50:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@576df26a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpLoggerBeforeTest -->
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:tests.MediaTests@1f474d7e]" name="login" is-config="true" duration-ms="2926" started-at="2018-12-05T09:50:17Z" finished-at="2018-12-05T09:50:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nhidinh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[UDRhc3N3MHJkMSE=]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="BeforeMethod(java.lang.reflect.Method)[pri:0, instance:tests.MediaTests@1f474d7e]" name="BeforeMethod" is-config="true" duration-ms="1" started-at="2018-12-05T09:50:20Z" finished-at="2018-12-05T09:50:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.MediaTests.uploadImageByDragDrop() throws java.awt.AWTException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeMethod -->
+        <test-method status="PASS" signature="uploadImageByDragDrop()[pri:0, instance:tests.MediaTests@1f474d7e]" name="uploadImageByDragDrop" duration-ms="746" started-at="2018-12-05T09:50:20Z" finished-at="2018-12-05T09:50:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- uploadImageByDragDrop -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:tests.MediaTests@1f474d7e]" name="AfterMethod" is-config="true" duration-ms="1" started-at="2018-12-05T09:50:21Z" finished-at="2018-12-05T09:50:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:tests.MediaTests@1f474d7e]" name="closeBrowser" is-config="true" duration-ms="682" started-at="2018-12-05T09:50:21Z" finished-at="2018-12-05T09:50:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="endLogAfterTest(org.testng.ITestContext)[pri:0, instance:tests.MediaTests@1f474d7e]" name="endLogAfterTest" is-config="true" duration-ms="0" started-at="2018-12-05T09:50:22Z" finished-at="2018-12-05T09:50:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@576df26a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endLogAfterTest -->
+      </class> <!-- tests.MediaTests -->
+    </test> <!-- Test Upload Files -->
   </suite> <!-- FirstSuite -->
 </testng-results>

@@ -14,7 +14,8 @@ public class Log {
 
     public static void innitLog() {
         String logFileName = timeStamp + ".log";
-        System.setProperty("logFileName", logFileName);
+        String logLocation = "log/"+logFileName;
+        System.setProperty("logLocation", logLocation);
         DOMConfigurator.configure("log4j.xml");
     }
 
