@@ -49,7 +49,6 @@ public class PostTests extends BaseTest {
         String imagePath = Links.IMAGE_PATH;
 
         Page.LeftNavigation().NavigateToPostPage();
-        Page.Posts().clickAddNewPost();
         Page.AddNewPost().addGalleryToPost(imagePath);
         Page.AddNewPost().addNewPost(title, body);
     }

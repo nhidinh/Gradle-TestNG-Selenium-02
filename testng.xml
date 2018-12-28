@@ -18,6 +18,7 @@
             </class>
         </classes>
     </test>
+
     <test name="Login Test - Invalid Login Test" enabled="true">
         <classes>
             <class name="tests.LoginTests">
@@ -27,6 +28,7 @@
             </class>
         </classes>
     </test>
+
     <test name="Login Test - Test Login With ExcelDataFile" enabled="true">
         <classes>
             <class name="tests.LoginTests">
@@ -46,6 +48,7 @@
             </class>
         </classes>
     </test>
+
     <test name="Add New Post Test With Gallery" enabled="true">
         <classes>
             <class name="tests.PostTests">

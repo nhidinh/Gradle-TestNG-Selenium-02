@@ -1,12 +1,11 @@
 package tests;
 
-import org.apache.poi.xssf.usermodel.XSSFRow;
+import data.ExcelHelper;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import data.ExcelHelper;
 import utilities.logger.Log;
 
 /**
@@ -27,17 +26,28 @@ public class LoginTests extends BaseTest {
         String username;
         String password;
         String testcaseName;
+        String status;
+        int usernameCell = ExcelHelper.getCellIndexByText("username");
+        int passwordCell = ExcelHelper.getCellIndexByText("password");
+        int tcNameCell = ExcelHelper.getCellIndexByText("testcasename");
+        int statusCell = ExcelHelper.getCellIndexByText("status");
         for(int i = 1; i<countRow; i++){
-            XSSFRow row = ExcelHelper.getRowData(i);
-            username = row.getCell(1).toString();
-            password = row.getCell(2).toString();
-            testcaseName = row.getCell(0).toString();
+            username = ExcelHelper.getCellData(i, usernameCell);
+            password = ExcelHelper.getCellData(i, passwordCell);
+            testcaseName = ExcelHelper.getCellData(i, tcNameCell);
+            status = ExcelHelper.getCellData(i, statusCell);
+
             LoginPage loginPage = Page.Login().Goto();
             loginPage.LoginWithUsername(username, password);
 
             Log.info("Complete Test case: "+ testcaseName);
             System.out.println("Compete Test case: " + testcaseName);
-            Page.TopNavigation().LogOut();
+            if (status.equals("pass")){
+                loginPage.VerifyLoginIsSuccessfully(username);
+                Page.TopNavigation().LogOut();
+            }else if(status.equals("failed")) {
+                loginPage.VerifyErrorMessageDisplays();
+            }
         }
     }
 

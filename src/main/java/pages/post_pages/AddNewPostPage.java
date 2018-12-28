@@ -4,13 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import pages.IPage;
 import pages.base_pages.BasePage;
 
 /**
  * User: Nhi Dinh
  * Date: 22/11/2018
  */
-public class AddNewPostPage extends BasePage {
+public class AddNewPostPage extends BasePage implements IPage {
     public AddNewPostPage(WebDriver driver) {
         super(driver);
     }
@@ -85,4 +86,8 @@ public class AddNewPostPage extends BasePage {
         backToPreviousPage();
     }
 
+    @Override
+    public void testmethod() {
+        System.out.println("this is test method");
+    }
 }

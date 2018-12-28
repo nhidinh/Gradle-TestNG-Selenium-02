@@ -1,7 +1,7 @@
 package data;
 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.Header;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -73,9 +73,14 @@ public class ExcelHelper
             //Open The Excel File:
             Log.info("Opening the data file");
             FileInputStream ExcelFile = new FileInputStream(testDataExcelPath);
+            Log.info("Getting Excel File");
             excelWorkBook = new XSSFWorkbook(ExcelFile);
+            Log.info("Setting Excel File Sheet");
             excelSheet = excelWorkBook.getSheet(sheetName);
+            Log.info("Complete setting Excel File Sheet");
         }catch (Exception e){
+            Log.error("FAILED to set Excel File Sheet");
+            Log.error(e.getMessage());
             e.printStackTrace();
         }
     }
@@ -103,6 +108,7 @@ public class ExcelHelper
         try{
             row = excelSheet.getRow(rowNumber);
             cell = row.getCell(colNumber);
+
             Log.info("Setting Cell Data...");
             if(cell == null){
                 cell = row.createCell(colNumber);
@@ -111,18 +117,41 @@ public class ExcelHelper
                 cell.setCellValue(value);
             }
             FileOutputStream outputFile = new FileOutputStream(testDataExcelPath);
+
             Log.info("Writing Data to file: "+outputFile);
             excelWorkBook.write(outputFile);
             outputFile.flush();
             outputFile.close();
-            Log.info("Write file completed");
+
+            Log.info("Complete writing file");
         } catch (IOException e) {
+            Log.error("FAILED to write file");
+            Log.error(e.getMessage());
             e.printStackTrace();
         }
     }
 
-    public void getCellIndexByValue(String valueCell){
-        Header header = excelSheet.getFirstHeader();
-        System.out.println();
+    public static int getCellIndexByText(String text){
+        Log.info("Getting cell index by text: " + text);
+        DataFormatter formatter = new DataFormatter();
+        row = excelSheet.getRow(0);
+        int cellIndex = -1;
+        if(row == null){
+            Log.error("Header row is empty");
+        }
+        for(Cell cell:row){
+            String textCell = formatter.formatCellValue(cell);
+            if(textCell.equals(text)){
+                cellIndex= cell.getColumnIndex();
+                Log.info("Found Cell with column index: "+ cell.getColumnIndex());
+            }
+        }
+        if (cellIndex != -1){
+            return cellIndex;
+        }else {
+            Log.info("No cell is found in header");
+            System.out.println("No cell is found in header");
+        }
+        return cellIndex;
     }
 }
