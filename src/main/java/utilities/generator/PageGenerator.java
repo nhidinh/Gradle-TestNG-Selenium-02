@@ -7,7 +7,7 @@ import pages.LoginPage;
 import pages.base_pages.BasePage;
 import pages.base_pages.LeftNavigation;
 import pages.base_pages.TopNavigation;
-import pages.media_pages.MediaLibraryPage;
+import pages.media_pages.MediaLibrary_Page;
 import pages.post_pages.*;
 
 /**
@@ -39,28 +39,28 @@ public class PageGenerator {
         return GetPage(DashboardPage.class);
     }
 
-    public AddMediaForm AddMediaForm() {
-        return GetPage(AddMediaForm.class);
+    public Media_Add_Form AddMediaForm() {
+        return GetPage(Media_Add_Form.class);
     }
 
-    public AddNewPostPage AddNewPost() {
-        return GetPage(AddNewPostPage.class);
+    public Post_AddNew_Page AddNewPost() {
+        return GetPage(Post_AddNew_Page.class);
     }
 
-    public EditPostPage EditPost() {
-        return GetPage(EditPostPage.class);
+    public Post_Edit_Page EditPost() {
+        return GetPage(Post_Edit_Page.class);
     }
 
-    public PostDetailPage PostDetail() {
-        return GetPage(PostDetailPage.class);
+    public Post_Detail_Page PostDetail() {
+        return GetPage(Post_Detail_Page.class);
     }
 
-    public PostsPage Posts() {
-        return GetPage(PostsPage.class);
+    public Post_All_Page Posts() {
+        return GetPage(Post_All_Page.class);
     }
 
-    public MediaLibraryPage MediaLibrary() {
-        return GetPage(MediaLibraryPage.class);
+    public MediaLibrary_Page MediaLibrary() {
+        return GetPage(MediaLibrary_Page.class);
     }
 
     public TopNavigation TopNavigation() {

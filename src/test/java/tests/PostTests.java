@@ -25,7 +25,6 @@ public class PostTests extends BaseTest {
         Page.LeftNavigation().NavigateToPostPage();
         Page.Posts().clickAddNewPost();
         Page.AddNewPost().addNewPost(title, body);
-
         Page.AddNewPost().verifyNewPostIdAdded(title);
     }
 

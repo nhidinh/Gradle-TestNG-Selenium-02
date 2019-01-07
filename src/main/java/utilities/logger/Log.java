@@ -2,24 +2,41 @@ package utilities.logger;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
+import utilities.FileHelper;
 import utilities.data.InitData;
+
+import static org.apache.commons.io.FilenameUtils.separatorsToSystem;
 
 /**
  * User: Nhi Dinh
  * Date: 4/12/2018
  */
 public class Log {
-    private static Logger log = Logger.getLogger(Log.class.getName());
-    private static String timeStamp = InitData.TIMESTAMP;
+    private static Logger log;
+    private static String configFile_path;
 
-    public static void innitLog() {
-        String logFileName = timeStamp + ".log";
-        String logLocation = "log/"+logFileName;
-        System.setProperty("logLocation", logLocation);
-        DOMConfigurator.configure("log4j.xml");
+    public static void initLogger() {
+        setLogFileLocation();
+        getLog4jConfigurationFile();
+        log = Logger.getLogger(Log.class.getName());
+    }
+
+    private static void setLogFileLocation() {
+        String logDir_path = separatorsToSystem(InitData.LOG_DIR_PATH);
+        String logFile_path = separatorsToSystem(InitData.LOG_FILE_PATH);
+        configFile_path = separatorsToSystem(InitData.LOG_CONFIG_FILE_PATH);
+
+        FileHelper.createDirectory(logDir_path);
+        System.setProperty("logLocation", logFile_path);
+        System.out.println("Log file is created at: " + logFile_path);
+    }
+
+    private static void getLog4jConfigurationFile() {
+        DOMConfigurator.configure(configFile_path);
     }
 
     public static void startLog() {
+        initLogger();
         log.info("Start Log...");
     }
 
@@ -39,7 +56,7 @@ public class Log {
         log.info(message);
     }
 
-    public static void warn(String message) {
+    public static void warning(String message) {
         log.warn(message);
     }
 

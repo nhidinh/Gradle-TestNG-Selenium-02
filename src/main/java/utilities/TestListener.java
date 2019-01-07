@@ -18,14 +18,15 @@ import java.io.IOException;
  * Date: 21/11/2018
  */
 public class TestListener implements ITestListener {
-    private static ExtentReports extent = ExtentManager.getInstance();
+    private static ExtentReports extent ;
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
     private static String methodDes;
     private static String message;
     private static WebDriver driver;
     @Override
     public void onStart(ITestContext iTestContext) {
-        //Perform Onstart action
+        Log.startLog();
+        extent = ExtentManager.getInstance();
     }
 
     @Override
@@ -49,7 +50,7 @@ public class TestListener implements ITestListener {
         ExtentTest extentTest = extent.createTest(methodDes, methodDes);
         test.set(extentTest);
         test.get().assignAuthor(System.getProperty("user"));
-        Log.info(message);
+//        Log.info(message);
     }
 
     @Override
@@ -89,7 +90,7 @@ public class TestListener implements ITestListener {
     }
 
     private String setMessage(String status, String description){
-        return  "++++++++ TEST "+status+": " + description + " ++++++++";
+        return  "TEST "+status+": " + description;
     }
 
 }

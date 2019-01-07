@@ -11,8 +11,8 @@ import pages.base_pages.BasePage;
  * User: Nhi Dinh
  * Date: 22/11/2018
  */
-public class AddNewPostPage extends BasePage implements IPage {
-    public AddNewPostPage(WebDriver driver) {
+public class Post_AddNew_Page extends BasePage implements IPage {
+    public Post_AddNew_Page(WebDriver driver) {
         super(driver);
     }
 
@@ -48,39 +48,39 @@ public class AddNewPostPage extends BasePage implements IPage {
         driver.switchTo().defaultContent();
     }
 
-    private AddMediaForm clickAddMediaButton() {
+    private Media_Add_Form clickAddMediaButton() {
         click(btnAddMedia);
-        return new AddMediaForm(driver);
+        return new Media_Add_Form(driver);
     }
     public void addMediaToPost(String filePath){
-        AddMediaForm addMediaForm = clickAddMediaButton();
-        addMediaForm.selectUploadFilesTab();
-        addMediaForm.addMediaToPostByJS(filePath);
-        addMediaForm.clickInsertMediaButton();
+        Media_Add_Form mediaAddForm = clickAddMediaButton();
+        mediaAddForm.selectUploadFilesTab();
+        mediaAddForm.addMediaToPostByJS(filePath);
+        mediaAddForm.clickInsertMediaButton();
     }
 
     public void addGalleryToPost(String filePath)  {
-        AddMediaForm addMediaForm = clickAddMediaButton();
-        addMediaForm.clickCreateGalleryLink();
-        addMediaForm.selectUploadFilesTab();
-        addMediaForm.addMediaToPostByJS(filePath);
-        addMediaForm.clickCreateNewGallery();
-        addMediaForm.clickInserGalleryButton();
+        Media_Add_Form mediaAddForm = clickAddMediaButton();
+        mediaAddForm.clickCreateGalleryLink();
+        mediaAddForm.selectUploadFilesTab();
+        mediaAddForm.addMediaToPostByJS(filePath);
+        mediaAddForm.clickCreateNewGallery();
+        mediaAddForm.clickInserGalleryButton();
     }
 
-    public EditPostPage addNewPost(String title, String body) {
+    public Post_Edit_Page addNewPost(String title, String body) {
         setPostTitle(title);
         setPostBody(body);
         waitElementVisibility(lnkPermalink);
         click(btnPublish);
-        return new EditPostPage(driver);
+        return new Post_Edit_Page(driver);
     }
 
     public void verifyNewPostIdAdded(String title) {
         String message = getText(lblMessage);
         Assert.assertTrue(message.contains("Post published"));
         click(lnkViewPost);
-        PostDetailPage detailPage = new PostDetailPage(driver);
+        Post_Detail_Page detailPage = new Post_Detail_Page(driver);
         String postedTitle = detailPage.getPostTitle();
         Assert.assertEquals(postedTitle, title);
         backToPreviousPage();

@@ -3,7 +3,6 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
-import org.testng.xml.XmlTest;
 import utilities.Browser;
 import utilities.Links;
 import utilities.driver.DriverType;
@@ -22,13 +21,6 @@ import java.util.concurrent.ExecutionException;
 public class BaseTest {
     WebDriver driver;
     PageGenerator Page;
-
-    @BeforeSuite
-    public void beforeSuite(XmlTest test) {
-        String suite = test.getSuite().getName();
-        Log.innitLog();
-        Log.info("START SUITE: " + suite);
-    }
 
     @BeforeTest
     @Parameters("browser")

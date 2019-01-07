@@ -17,7 +17,7 @@ public class LoginTests extends BaseTest {
     @BeforeTest
     public void setUpTestData( ){
         Log.info("Setting up Test Data");
-        ExcelHelper.setDataFileLocation("ExcelTestData.xlsx");
+        ExcelHelper.setDataFileLocation("", "ExcelTestData.xlsx");
         ExcelHelper.setExcelFileSheet("Login");
     }
     @Test

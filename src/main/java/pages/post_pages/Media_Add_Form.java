@@ -12,8 +12,8 @@ import java.awt.*;
  * User: Nhi Dinh
  * Date: 29/11/2018
  */
-public class AddMediaForm extends BasePage {
-    public AddMediaForm(WebDriver driver) {
+public class Media_Add_Form extends BasePage {
+    public Media_Add_Form(WebDriver driver) {
         super(driver);
     }
 

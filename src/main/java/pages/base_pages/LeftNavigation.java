@@ -2,8 +2,8 @@ package pages.base_pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.media_pages.MediaLibraryPage;
-import pages.post_pages.PostsPage;
+import pages.media_pages.MediaLibrary_Page;
+import pages.post_pages.Post_All_Page;
 
 /**
  * User: Nhi Dinh
@@ -19,13 +19,13 @@ public class LeftNavigation extends BasePage {
     @FindBy(id = "menu-media")
     private WebElement lnkMedia;
 
-    public PostsPage NavigateToPostPage(){
+    public Post_All_Page NavigateToPostPage(){
         click(lnkPosts);
-        return new PostsPage(driver);
+        return new Post_All_Page(driver);
     }
 
-    public MediaLibraryPage NavigateToMediaPage(){
+    public MediaLibrary_Page NavigateToMediaPage(){
         click(lnkMedia);
-        return new MediaLibraryPage(driver);
+        return new MediaLibrary_Page(driver);
     }
 }

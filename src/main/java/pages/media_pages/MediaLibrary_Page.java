@@ -12,8 +12,8 @@ import java.awt.*;
  * User: Nhi Dinh
  * Date: 29/11/2018
  */
-public class MediaLibraryPage extends BasePage {
-    public MediaLibraryPage(WebDriver driver) {
+public class MediaLibrary_Page extends BasePage {
+    public MediaLibrary_Page(WebDriver driver) {
         super(driver);
     }
     //=============VARIABLES====================//

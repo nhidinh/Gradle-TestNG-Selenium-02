@@ -11,8 +11,8 @@ import pages.base_pages.BasePage;
  * User: Nhi Dinh
  * Date: 22/11/2018
  */
-public class PostsPage extends BasePage {
-    public PostsPage(WebDriver driver){
+public class Post_All_Page extends BasePage {
+    public Post_All_Page(WebDriver driver){
         super(driver);
     }
 
@@ -33,9 +33,9 @@ public class PostsPage extends BasePage {
     }
 
     //-------------METHODS------------//
-    public AddNewPostPage clickAddNewPost(){
+    public Post_AddNew_Page clickAddNewPost(){
         click(btnAddNewBy);
-        return new AddNewPostPage(driver);
+        return new Post_AddNew_Page(driver);
     }
     public void deleteAPostByTile(String title){
         findPostByTitle(title);

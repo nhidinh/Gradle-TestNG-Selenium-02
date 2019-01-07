@@ -28,6 +28,10 @@ public class Browser {
     }
     public static void Close(){
         driver.manage().deleteAllCookies();
+        driver.close();
+    }
+    public static void Quit(){
+        driver.manage().deleteAllCookies();
         driver.quit();
     }
     public static WebDriver GetDriver(ITestContext context){

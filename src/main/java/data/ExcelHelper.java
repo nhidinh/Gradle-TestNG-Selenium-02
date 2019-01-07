@@ -14,6 +14,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import static org.apache.commons.io.FilenameUtils.separatorsToSystem;
+
 
 /**
  * User: Nhi Dinh
@@ -21,10 +23,6 @@ import java.io.IOException;
  */
 public class ExcelHelper
 {
-    private static final String currentDir = System.getProperty("user.dir");
-    private static String macPath = currentDir + "//src//test//resources//" ;
-    private static String windowsPath = currentDir +  "\\src\\test\\resources\\";
-
     private static Platform platform = InitData.PLATFORM;
     private static String testDataExcelPath;
 
@@ -33,8 +31,8 @@ public class ExcelHelper
     private static XSSFCell cell;
     private static XSSFRow row;
 
-    public static int rowNumber;
-    public static int columnNumber;
+    private static int rowNumber;
+    private static int columnNumber;
 
     public static int getRowNumber() {
         return rowNumber;
@@ -52,20 +50,10 @@ public class ExcelHelper
         ExcelHelper.columnNumber = columnNumber;
     }
 
-    public static void setDataFileLocation(String testDataExcelFileName){
-        switch (platform) {
-            case MAC:
-                testDataExcelPath = macPath+testDataExcelFileName;
-                Log.info("Data File Location on MAC: " + testDataExcelPath + "\n");
-                break;
-            case WINDOWS:
-                testDataExcelPath = windowsPath+testDataExcelFileName;
-                Log.info("Data File Location on WINDOWS: " + testDataExcelPath + "\n");
-                break;
-            default:
-                Log.info("Data File not found! Check your file name!\n");
-                break;
-        }
+    public static void setDataFileLocation(String dataDirectory, String testDataExcelFileName){
+        String dataFile = dataDirectory + testDataExcelFileName;
+        testDataExcelPath = separatorsToSystem(InitData.TEST_DATASOURCE_PATH+dataFile);
+        Log.info("Data File Location: " + testDataExcelPath + "\n");
     }
 
     public static void setExcelFileSheet(String sheetName){
